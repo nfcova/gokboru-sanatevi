@@ -1,0 +1,13 @@
+{
+  "name": "gokboru-sanat-evi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Gökbörü Sanat Evi web sitesi — okullara tiyatro gösterileri",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node tests/smoke.cjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
