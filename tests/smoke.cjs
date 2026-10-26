@@ -48,7 +48,7 @@ const SAMPLE = `window.GOKBORU_ICERIK = {
   iletisim: { eposta: 'test@example.com', telefon: '+90 500 000 00 00', adres: '', instagram: '', youtube: '', formAdresi: '' },
   oyunlar: [
     { ad: 'Test Oyunu A', konu: 'Test konusu.', yasGrubu: 'İlkokul', sure: '40 dk', afis: '' },
-    { ad: 'Test Oyunu B', konu: 'Test konusu.', yasGrubu: 'Ortaokul', afis: 'assets/img/logo-960.jpg' }
+    { ad: 'Test Oyunu B', konu: 'Test konusu.', yasGrubu: 'Ortaokul', afis: 'assets/img/og-image.jpg' }
   ],
   galeri: [
     { tur: 'foto', kucuk: 'assets/img/logo-480.webp', buyuk: 'assets/img/logo-960.webp', aciklama: 'Test foto' },

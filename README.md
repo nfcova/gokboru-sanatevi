@@ -47,7 +47,7 @@ index.html              Tek sayfa: perde, menü, giriş, oyunlar, hakkımızda, 
 css/styles.css          Tasarım sistemi (renk değişkenleri, kumaş dokusu, perde animasyonu)
 js/content.js           ✏️ DÜZENLENECEK İÇERİK: oyunlar, galeri, iletişim bilgileri, form adresi
 js/main.js              Perde, menü, galeri görüntüleyici, form davranışı
-assets/img/             Optimize edilmiş logo (webp/jpg), amblem, favicon ve paylaşım görseli
+assets/img/             Optimize edilmiş logo (webp/png), favicon ve paylaşım görseli
 brand/logo-orijinal.png Yüklenen orijinal logo dosyası (kaynak, sitede doğrudan kullanılmaz)
 server.mjs              Yerel geliştirme sunucusu
 tests/smoke.cjs         Tarayıcı testleri
@@ -74,12 +74,13 @@ Form adresi gizli bir anahtar değildir, ancak hiçbir API anahtarını veya par
 
 ## Logo
 
-Kullanılan logo, yüklenen orijinal görselin (`brand/logo-orijinal.png`) yeniden boyutlandırılmış sürümleridir. Oranlar korunmuş, tasarım değiştirilmemiştir.
+Sitede, yüklenen şeffaf arka planlı amblem logosu (`brand/logo-orijinal.png`) kullanılır.
 
-- Görselin zaten koyu olan dış kenarı, CSS maskesiyle zemine yumuşakça karışır.
-- Üst menüde ve favicon'da, küçük boyutta okunabilmesi için logonun **amblem bölümünün kırpılmış hâli** kullanılır (kurt ve maskeler, değiştirilmeden).
+- Yalnızca boş şeffaf kenarları kırpılmış ve yeniden boyutlandırılmıştır (`assets/img/logo-*.webp`, `logo-480.png`). Oranlar ve tasarım değiştirilmemiştir.
+- Logonun siyah hatlarının koyu zeminde kaybolmaması için arkasına CSS ile bordo bir "sahne ışığı" konur. Logo görselinin kendisine dokunulmaz.
+- Logoda yazı bulunmadığından site adı, menüde ve giriş alanında düz metin olarak yer alır.
+- Favicon, uygulama simgeleri ve `og-image.jpg`, logonun koyu bordo bir zemin üzerine yerleştirilmiş hâlidir.
 - Logoyu güncellemek için yeni dosyayı `brand/` klasörüne koyup `assets/img/` içindeki boyutları yeniden üretin.
-- Arka planı şeffaf (PNG/SVG) bir logo sürümünüz varsa, siteye çok daha iyi oturur.
 
 ## Yayına alma (GitHub Pages örneği)
 

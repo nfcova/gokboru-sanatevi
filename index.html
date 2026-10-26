@@ -26,7 +26,7 @@
   <!-- Yazı tipleri sayfa çizimini engellemeden yüklenir -->
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600&display=swap"></noscript>
-  <link rel="preload" as="image" href="assets/img/logo-960.webp" type="image/webp">
+  <link rel="preload" as="image" type="image/webp" imagesrcset="assets/img/logo-480.webp 480w, assets/img/logo-960.webp 960w" imagesizes="(min-width: 700px) 420px, 70vw">
   <link rel="stylesheet" href="css/styles.css">
 
   <script>
@@ -37,7 +37,8 @@
       var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
       var seen = false;
       try { seen = sessionStorage.getItem('gb-perde') === '1'; } catch (e) {}
-      if (!reduce && !seen) d.classList.add('curtain-on');
+      // curtain-on perde kalkınca silinir; intro-late kalır ki giriş animasyonları yarıda atlamasın.
+      if (!reduce && !seen) d.classList.add('curtain-on', 'intro-late');
     })();
   </script>
 
@@ -47,7 +48,7 @@
     "@type": "PerformingGroup",
     "name": "Gökbörü Sanat Evi",
     "description": "Okullara giderek öğrencilere tiyatro gösterileri sunan sanat topluluğu.",
-    "logo": "assets/img/logo-960.jpg"
+    "logo": "assets/img/logo-480.png"
   }
   </script>
 </head>
@@ -60,8 +61,8 @@
     <div class="curtain__light"></div>
     <div class="curtain__brand">
       <picture>
-        <source srcset="assets/img/logo-480.webp 480w, assets/img/logo-960.webp 960w" sizes="(min-width: 700px) 560px, 86vw" type="image/webp">
-        <img src="assets/img/logo-960.jpg" alt="" width="960" height="640" class="logo-img" decoding="async">
+        <source srcset="assets/img/logo-480.webp 480w, assets/img/logo-960.webp 960w" sizes="(min-width: 700px) 420px, 70vw" type="image/webp">
+        <img src="assets/img/logo-480.png" alt="" width="960" height="732" class="logo-img" decoding="async">
       </picture>
     </div>
   </div>
@@ -72,9 +73,10 @@
     <div class="site-header__inner">
       <a class="brand" href="#ana-sayfa" aria-label="Gökbörü Sanat Evi — Ana sayfa">
         <picture>
-          <source srcset="assets/img/amblem-96.webp 1x, assets/img/amblem-192.webp 2x" type="image/webp">
-          <img src="assets/img/amblem-192.jpg" alt="" width="192" height="192" class="logo-img brand__mark" decoding="async">
+          <source srcset="assets/img/logo-160.webp" type="image/webp">
+          <img src="assets/img/logo-480.png" alt="" width="160" height="122" class="logo-img brand__mark" decoding="async">
         </picture>
+        <span class="brand__name">Gökbörü <span>Sanat Evi</span></span>
       </a>
 
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
@@ -107,14 +109,14 @@
       </div>
 
       <div class="hero__content">
-        <picture class="hero__logo">
-          <source srcset="assets/img/logo-480.webp 480w, assets/img/logo-960.webp 960w" sizes="(min-width: 960px) 380px, 72vw" type="image/webp">
-          <img src="assets/img/logo-960.jpg" alt="Gökbörü Sanat Evi logosu" width="960" height="640" class="logo-img" decoding="async" fetchpriority="high">
+        <picture class="hero__logo logo-stage">
+          <source srcset="assets/img/logo-480.webp 480w, assets/img/logo-960.webp 960w" sizes="(min-width: 960px) 300px, 52vw" type="image/webp">
+          <img src="assets/img/logo-480.png" alt="Gökbörü Sanat Evi logosu" width="960" height="732" class="logo-img" decoding="async" fetchpriority="high">
         </picture>
-        <p class="eyebrow hero__eyebrow"><span class="eyebrow__line"></span>Okullara gelen sahne</p>
+        <p class="eyebrow hero__eyebrow"><span class="eyebrow__line"></span><span class="hero__eyebrow-text">Gökbörü Sanat Evi</span><span class="eyebrow__line"></span></p>
         <h1 class="hero__title" id="hero-baslik">
-          <span class="hero__line">Sahne Açılıyor,</span>
-          <span class="hero__line hero__line--accent">Hayal Gücü Başlıyor</span>
+          <span class="hero__line"><span class="hero__line-in">Sahne Açılıyor,</span></span>
+          <span class="hero__line hero__line--accent"><span class="hero__line-in">Hayal Gücü Başlıyor</span></span>
         </h1>
         <p class="hero__lead">
           Gökbörü Sanat Evi, tiyatroyu okulların kapısına taşıyan bir sanat topluluğudur.
@@ -316,10 +318,11 @@
   <footer class="site-footer">
     <div class="container site-footer__inner">
       <div class="site-footer__brand">
-        <picture>
+        <picture class="logo-stage">
           <source srcset="assets/img/logo-480.webp" type="image/webp">
-          <img src="assets/img/logo-960.jpg" alt="Gökbörü Sanat Evi logosu" width="960" height="640" class="logo-img site-footer__logo" loading="lazy" decoding="async">
+          <img src="assets/img/logo-480.png" alt="Gökbörü Sanat Evi logosu" width="480" height="366" class="logo-img site-footer__logo" loading="lazy" decoding="async">
         </picture>
+        <p class="site-footer__name">Gökbörü Sanat Evi</p>
         <p>Okullara gelen sahne.</p>
       </div>
       <nav class="site-footer__nav" aria-label="Alt menü">
