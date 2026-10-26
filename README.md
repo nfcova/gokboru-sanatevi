@@ -82,8 +82,11 @@ Sitede, yüklenen şeffaf arka planlı amblem logosu (`brand/logo-orijinal.png`)
 - Favicon, uygulama simgeleri ve `og-image.jpg`, logonun koyu bordo bir zemin üzerine yerleştirilmiş hâlidir.
 - Logoyu güncellemek için yeni dosyayı `brand/` klasörüne koyup `assets/img/` içindeki boyutları yeniden üretin.
 
-## Yayına alma (GitHub Pages örneği)
+## Yayın
 
-1. Depoyu GitHub'a gönderin.
-2. **Settings → Pages → Build and deployment → Source: "Deploy from a branch"** yolunu izleyin, `main` dalını ve `/ (root)` klasörünü seçin.
-3. Alan adı belli olduğunda `index.html` içine `<link rel="canonical">` ekleyin, `og:image` adresini tam URL yapın ve `robots.txt` dosyasına site haritası satırını ekleyin.
+Site GitHub Pages ile **https://nfcova.github.io/gokboru-sanatevi/** adresinde yayınlanır.
+`main` dalına gönderilen her değişiklik birkaç dakika içinde otomatik olarak yayına çıkar.
+`.nojekyll` dosyası, Pages'in dosyaları olduğu gibi sunmasını sağlar.
+
+Özel bir alan adı alındığında **Settings → Pages → Custom domain** bölümünden tanımlayın.
+Ardından `index.html` içindeki `canonical`/`og:` adreslerini, `robots.txt` ve `sitemap.xml` dosyalarını yeni adresle güncelleyin.
