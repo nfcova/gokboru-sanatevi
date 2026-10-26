@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nfcova.github.io/gokboru-sanatevi/sitemap.xml

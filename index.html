@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="tr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gökbörü Sanat Evi | Okullara Tiyatro Gösterileri</title>
+  <meta name="description" content="Gökbörü Sanat Evi, okullara giderek öğrencilere tiyatro gösterileri sunan bir sanat topluluğudur. Oyunlarımızı keşfedin, okulunuz için gösteri talep edin.">
+  <link rel="canonical" href="https://nfcova.github.io/gokboru-sanatevi/">
+  <meta name="theme-color" content="#0b0809">
+  <meta name="color-scheme" content="dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="Gökbörü Sanat Evi">
+  <meta property="og:title" content="Gökbörü Sanat Evi | Okullara Tiyatro Gösterileri">
+  <meta property="og:description" content="Sahne açılıyor, hayal gücü başlıyor. Okulunuz için tiyatro gösterisi talep edin.">
+  <meta property="og:url" content="https://nfcova.github.io/gokboru-sanatevi/">
+  <meta property="og:image" content="https://nfcova.github.io/gokboru-sanatevi/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/img/icon-180.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Yazı tipleri sayfa çizimini engellemeden yüklenir -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600&display=swap"></noscript>
+  <link rel="preload" as="image" type="image/webp" imagesrcset="assets/img/logo-480.webp 480w, assets/img/logo-960.webp 960w" imagesizes="(min-width: 700px) 420px, 70vw">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script>
+    /* Perde açılışı: oturum başına bir kez, azaltılmış hareket tercihinde hiç. */
+    (function () {
+      var d = document.documentElement;
+      d.className = d.className.replace('no-js', 'js');
+      var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var seen = false;
+      try { seen = sessionStorage.getItem('gb-perde') === '1'; } catch (e) {}
+      // curtain-on perde kalkınca silinir; intro-late kalır ki giriş animasyonları yarıda atlamasın.
+      if (!reduce && !seen) d.classList.add('curtain-on', 'intro-late');
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PerformingGroup",
+    "name": "Gökbörü Sanat Evi",
+    "description": "Okullara giderek öğrencilere tiyatro gösterileri sunan sanat topluluğu.",
+    "url": "https://nfcova.github.io/gokboru-sanatevi/",
+    "logo": "https://nfcova.github.io/gokboru-sanatevi/assets/img/logo-480.png"
+  }
+  </script>
+</head>
+<body>
+  <!-- Açılış perdesi (yalnızca görsel; ekran okuyuculardan gizli) -->
+  <div class="curtain" id="curtain" aria-hidden="true">
+    <div class="curtain__panel curtain__panel--left fabric"></div>
+    <div class="curtain__panel curtain__panel--right fabric"></div>
+    <div class="curtain__valance fabric"></div>
+    <div class="curtain__light"></div>
+    <div class="curtain__brand">
+      <picture>
+        <source srcset="assets/img/logo-480.webp 480w, assets/img/logo-960.webp 960w" sizes="(min-width: 700px) 420px, 70vw" type="image/webp">
+        <img src="assets/img/logo-480.png" alt="" width="960" height="732" class="logo-img" decoding="async">
+      </picture>
+    </div>
+  </div>
+
+  <a class="skip-link" href="#icerik">İçeriğe geç</a>
+
+  <header class="site-header" id="ust">
+    <div class="site-header__inner">
+      <a class="brand" href="#ana-sayfa" aria-label="Gökbörü Sanat Evi — Ana sayfa">
+        <picture>
+          <source srcset="assets/img/logo-160.webp" type="image/webp">
+          <img src="assets/img/logo-480.png" alt="" width="160" height="122" class="logo-img brand__mark" decoding="async">
+        </picture>
+        <span class="brand__name">Gökbörü <span>Sanat Evi</span></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="nav-toggle__label">Menü</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Ana menü">
+        <ul class="site-nav__list">
+          <li><a href="#ana-sayfa">Ana Sayfa</a></li>
+          <li><a href="#oyunlar">Oyunlar</a></li>
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+        <a class="btn btn--primary site-nav__cta" href="#iletisim">Gösteri Talep Et</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="icerik">
+    <!-- 1. Giriş -->
+    <section class="hero" id="ana-sayfa" aria-labelledby="hero-baslik">
+      <div class="hero__stage" aria-hidden="true">
+        <div class="hero__drape hero__drape--left fabric"></div>
+        <div class="hero__drape hero__drape--right fabric"></div>
+        <div class="hero__beam"></div>
+        <div class="hero__floor"></div>
+        <div class="hero__dust"></div>
+      </div>
+
+      <div class="hero__content">
+        <picture class="hero__logo logo-stage">
+          <source srcset="assets/img/logo-480.webp 480w, assets/img/logo-960.webp 960w" sizes="(min-width: 960px) 300px, 52vw" type="image/webp">
+          <img src="assets/img/logo-480.png" alt="Gökbörü Sanat Evi logosu" width="960" height="732" class="logo-img" decoding="async" fetchpriority="high">
+        </picture>
+        <p class="eyebrow hero__eyebrow"><span class="eyebrow__line"></span><span class="hero__eyebrow-text">Gökbörü Sanat Evi</span><span class="eyebrow__line"></span></p>
+        <h1 class="hero__title" id="hero-baslik">
+          <span class="hero__line"><span class="hero__line-in">Sahne Açılıyor,</span></span>
+          <span class="hero__line hero__line--accent"><span class="hero__line-in">Hayal Gücü Başlıyor</span></span>
+        </h1>
+        <p class="hero__lead">
+          Gökbörü Sanat Evi, tiyatroyu okulların kapısına taşıyan bir sanat topluluğudur.
+          Öğrencilerle aynı salonda buluşuyor, perdeyi onların hayal gücüyle birlikte açıyoruz.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" href="#oyunlar">Oyunlarımızı Keşfet</a>
+          <a class="btn btn--ghost btn--lg" href="#iletisim">Gösteri İçin İletişime Geç</a>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#oyunlar" aria-label="Oyunlar bölümüne kaydır">
+        <span class="scroll-cue__line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- 2. Oyunlar -->
+    <section class="section section--plays" id="oyunlar" aria-labelledby="oyunlar-baslik">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="act">I. Perde</span><span class="eyebrow__line"></span>Repertuvar</p>
+          <h2 class="section-title" id="oyunlar-baslik">Oyunlarımız</h2>
+          <p class="section-lead">Her oyun, izleyicisinin yaşına göre kurgulanan bir yolculuk. Afişler, konular ve yaş grupları burada.</p>
+        </header>
+
+        <!-- js/content.js içindeki "oyunlar" listesi doluysa kartlar buraya çizilir. -->
+        <div class="plays" id="plays-list" data-empty="true">
+          <div class="empty-state reveal">
+            <p class="empty-state__title">Repertuvarımız sahneye hazırlanıyor</p>
+            <p>Oyunlarımızın afişleri, konuları ve yaş grupları çok yakında bu sahnede olacak.
+              Şimdiden bilgi almak için <a href="#iletisim">bizimle iletişime geçebilirsiniz</a>.</p>
+          </div>
+          <ul class="plays__grid plays__grid--ghost" aria-hidden="true">
+            <li class="poster poster--ghost reveal"><span>Afiş<br>yakında</span></li>
+            <li class="poster poster--ghost reveal"><span>Afiş<br>yakında</span></li>
+            <li class="poster poster--ghost reveal"><span>Afiş<br>yakında</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Hakkımızda -->
+    <section class="section section--about" id="hakkimizda" aria-labelledby="hakkimizda-baslik">
+      <div class="container about">
+        <div class="about__text reveal">
+          <p class="eyebrow"><span class="act">II. Perde</span><span class="eyebrow__line"></span>Biz kimiz</p>
+          <h2 class="section-title" id="hakkimizda-baslik">Hakkımızda</h2>
+          <p class="about__lead">Tiyatroyu öğrencilerin ayağına götürüyoruz.</p>
+          <p>Gökbörü Sanat Evi; okullara giderek öğrencilere tiyatro gösterileri sunan bir sanat topluluğudur.
+            Okul salonunu bir sahneye, öğrencileri de hikâyenin bir parçasına dönüştürmeyi amaçlıyoruz.</p>
+          <p>Bir oyunun perdesi açıldığında yalnızca bir hikâye anlatılmaz; merak uyanır, empati büyür,
+            hayal gücü kanatlanır. Bu deneyimi okul ortamında, öğrencilere en yakın yerde yaşatmak istiyoruz.</p>
+        </div>
+
+        <ul class="pillars" role="list">
+          <li class="pillar reveal">
+            <span class="pillar__num" aria-hidden="true">01</span>
+            <h3 class="pillar__title">Okulunuza geliyoruz</h3>
+            <p>Gösterilerimizi okulunuzun kendi ortamında sahneliyoruz.</p>
+          </li>
+          <li class="pillar reveal">
+            <span class="pillar__num" aria-hidden="true">02</span>
+            <h3 class="pillar__title">Yaşa uygun oyunlar</h3>
+            <p>Her oyun için hedef yaş grubunu açıkça paylaşıyoruz.</p>
+          </li>
+          <li class="pillar reveal">
+            <span class="pillar__num" aria-hidden="true">03</span>
+            <h3 class="pillar__title">Hayal gücü ve empati</h3>
+            <p>Sahne, öğrencilere kendini başkasının yerine koymayı öğretir.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4. Galeri -->
+    <section class="section section--gallery" id="galeri" aria-labelledby="galeri-baslik">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="act">III. Perde</span><span class="eyebrow__line"></span>Sahneden kareler</p>
+          <h2 class="section-title" id="galeri-baslik">Fotoğraf &amp; Video Galerisi</h2>
+        </header>
+
+        <div class="gallery-filter" role="group" aria-label="Galeri filtresi" hidden>
+          <button type="button" class="chip is-active" data-filter="tumu" aria-pressed="true">Tümü</button>
+          <button type="button" class="chip" data-filter="foto" aria-pressed="false">Fotoğraflar</button>
+          <button type="button" class="chip" data-filter="video" aria-pressed="false">Videolar</button>
+        </div>
+
+        <div class="gallery" id="gallery-list" data-empty="true">
+          <div class="empty-state reveal">
+            <p class="empty-state__title">Galeri yakında açılıyor</p>
+            <p>Gösterilerimizden fotoğraf ve videolar burada paylaşılacak.</p>
+          </div>
+          <ul class="gallery__grid gallery__grid--ghost" aria-hidden="true">
+            <li class="tile tile--ghost tile--wide"></li>
+            <li class="tile tile--ghost"></li>
+            <li class="tile tile--ghost"></li>
+            <li class="tile tile--ghost"></li>
+            <li class="tile tile--ghost"></li>
+            <li class="tile tile--ghost tile--wide"></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. İletişim / Gösteri talebi -->
+    <section class="section section--contact" id="iletisim" aria-labelledby="iletisim-baslik">
+      <div class="container contact">
+        <div class="contact__intro reveal">
+          <p class="eyebrow"><span class="act">Final</span><span class="eyebrow__line"></span>Okul yöneticileri için</p>
+          <h2 class="section-title" id="iletisim-baslik">Okulunuzda Perdeyi Birlikte Açalım</h2>
+          <p class="section-lead">Gösteri talebinizi iletin; uygun oyun ve tarih için sizinle iletişime geçelim.</p>
+
+          <ol class="steps">
+            <li><span class="steps__n">1</span><div><strong>Talebinizi iletin</strong><p>Okulunuzu ve öğrenci grubunuzu kısaca anlatın.</p></div></li>
+            <li><span class="steps__n">2</span><div><strong>Oyun ve tarih</strong><p>Yaş grubuna uygun oyunu ve tarihi birlikte belirleyelim.</p></div></li>
+            <li><span class="steps__n">3</span><div><strong>Perde açılsın</strong><p>Gösteriyi okulunuzda sahneleyelim.</p></div></li>
+          </ol>
+
+          <div class="contact-card" id="contact-card">
+            <h3 class="contact-card__title">İletişim bilgileri</h3>
+            <!-- js/content.js içindeki "iletisim" alanları doluysa burası güncellenir. -->
+            <p class="contact-card__empty" id="contact-empty">Telefon ve e-posta bilgilerimiz yakında burada yer alacak.</p>
+            <ul class="contact-card__list" id="contact-list" hidden></ul>
+          </div>
+        </div>
+
+        <form class="request-form reveal" id="request-form" novalidate aria-labelledby="form-baslik">
+          <h3 class="request-form__title" id="form-baslik">Gösteri Talep Formu</h3>
+          <p class="form-status form-status--info" id="form-mode" role="note"></p>
+
+          <div class="field">
+            <label for="f-okul">Okul adı <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-okul" name="okul" type="text" autocomplete="organization" required>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-yetkili">Yetkili adı soyadı <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-yetkili" name="yetkili" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="f-gorev">Görevi</label>
+              <input id="f-gorev" name="gorev" type="text" autocomplete="organization-title" placeholder="Örn. Müdür yardımcısı">
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-eposta">E-posta <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-eposta" name="eposta" type="email" autocomplete="email" inputmode="email" required>
+            </div>
+            <div class="field">
+              <label for="f-telefon">Telefon <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-telefon" name="telefon" type="tel" autocomplete="tel" inputmode="tel" required>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-il">İl / İlçe</label>
+              <input id="f-il" name="il" type="text" autocomplete="address-level2">
+            </div>
+            <div class="field">
+              <label for="f-yas">Öğrenci grubu <span class="req" aria-hidden="true">*</span></label>
+              <select id="f-yas" name="yas" required>
+                <option value="">Seçiniz</option>
+                <option>Okul öncesi</option>
+                <option>İlkokul (1–4. sınıf)</option>
+                <option>Ortaokul (5–8. sınıf)</option>
+                <option>Lise</option>
+                <option>Karma</option>
+              </select>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-sayi">Tahmini öğrenci sayısı</label>
+              <input id="f-sayi" name="sayi" type="number" min="1" inputmode="numeric">
+            </div>
+            <div class="field">
+              <label for="f-tarih">Tercih edilen tarih</label>
+              <input id="f-tarih" name="tarih" type="date">
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-mesaj">Mesajınız</label>
+            <textarea id="f-mesaj" name="mesaj" rows="4" placeholder="İlgilendiğiniz oyun, salon imkânları veya sorularınız…"></textarea>
+          </div>
+          <div class="field field--check">
+            <input id="f-onay" name="onay" type="checkbox" required>
+            <label for="f-onay">Paylaştığım bilgilerin yalnızca bu talebin yanıtlanması amacıyla kullanılmasını kabul ediyorum. <span class="req" aria-hidden="true">*</span></label>
+          </div>
+
+          <button class="btn btn--primary btn--lg btn--block" type="submit" id="form-submit">Talebi Gönder</button>
+          <p class="form-status" id="form-result" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <picture class="logo-stage">
+          <source srcset="assets/img/logo-480.webp" type="image/webp">
+          <img src="assets/img/logo-480.png" alt="Gökbörü Sanat Evi logosu" width="480" height="366" class="logo-img site-footer__logo" loading="lazy" decoding="async">
+        </picture>
+        <p class="site-footer__name">Gökbörü Sanat Evi</p>
+        <p>Okullara gelen sahne.</p>
+      </div>
+      <nav class="site-footer__nav" aria-label="Alt menü">
+        <h2 class="site-footer__heading">Sayfalar</h2>
+        <ul>
+          <li><a href="#ana-sayfa">Ana Sayfa</a></li>
+          <li><a href="#oyunlar">Oyunlar</a></li>
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+      </nav>
+      <div class="site-footer__contact">
+        <h2 class="site-footer__heading">İletişim</h2>
+        <ul id="footer-contact">
+          <li><a href="#iletisim">Gösteri talep formu</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container site-footer__bottom">
+      <p>© <span id="yil">2026</span> Gökbörü Sanat Evi. Tüm hakları saklıdır.</p>
+      <a href="#ust" class="to-top">Yukarı çık ↑</a>
+    </div>
+  </footer>
+
+  <!-- Galeri görüntüleyici -->
+  <dialog class="lightbox" id="lightbox" aria-label="Galeri görüntüleyici">
+    <button class="lightbox__close" type="button" aria-label="Kapat">×</button>
+    <div class="lightbox__body" id="lightbox-body"></div>
+    <p class="lightbox__caption" id="lightbox-caption"></p>
+  </dialog>
+
+  <script src="js/content.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
