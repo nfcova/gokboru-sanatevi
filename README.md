@@ -74,13 +74,13 @@ Form adresi gizli bir anahtar değildir, ancak hiçbir API anahtarını veya par
 
 ## Logo
 
-Sitede, yüklenen şeffaf arka planlı amblem logosu (`brand/logo-orijinal.png`) kullanılır.
+Kaynak dosya: `brand/logo-orijinal.png` (şeffaf zemin üzerinde siyah kurt ve maske çizimi).
 
-- Yalnızca boş şeffaf kenarları kırpılmış ve yeniden boyutlandırılmıştır (`assets/img/logo-*.webp`, `logo-480.png`). Oranlar ve tasarım değiştirilmemiştir.
-- Logonun siyah hatlarının koyu zeminde kaybolmaması için arkasına CSS ile bordo bir "sahne ışığı" konur. Logo görselinin kendisine dokunulmaz.
-- Logoda yazı bulunmadığından site adı, menüde ve giriş alanında düz metin olarak yer alır.
-- Favicon, uygulama simgeleri ve `og-image.jpg`, logonun koyu bordo bir zemin üzerine yerleştirilmiş hâlidir.
-- Logoyu güncellemek için yeni dosyayı `brand/` klasörüne koyup `assets/img/` içindeki boyutları yeniden üretin.
+- Sitenin zemini siyah olduğundan logo, **şekline dokunulmadan kırık beyaz renkte** (negatif sürüm) kullanılır (`assets/img/logo-*.webp`, `logo-480.png`). Yalnızca boş şeffaf kenarlar kırpılmıştır, oranlar korunmuştur.
+- Logonun arkasında CSS ile bordo bir sahne ışığı bulunur.
+- Logoda yazı olmadığından site adı menüde ve girişte düz metin olarak yer alır.
+- Favicon, uygulama simgeleri ve `og-image.jpg`, logonun koyu bordo zemin üzerindeki hâlidir.
+- Açılış perdesinde logo gösterilmez; logo, perde açıldıktan sonra sahnede belirir.
 
 ## Yayın
 

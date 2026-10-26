@@ -178,35 +178,6 @@ button, input, select, textarea { font: inherit; color: inherit; }
     radial-gradient(ellipse 120% 70% at 50% 110%, rgba(0, 0, 0, 0.6), transparent 60%);
   animation: fade-out 0.9s ease 1.3s forwards;
 }
-.curtain__brand {
-  position: absolute; inset: 0; z-index: 3;
-  display: grid; place-items: center;
-  padding: 24px;
-  opacity: 0;
-  animation:
-    brand-in 0.85s var(--ease-out) 0.1s forwards,
-    brand-out 0.55s ease 1.05s forwards;
-}
-.curtain__brand::before {
-  content: ''; position: absolute; left: 50%; top: 50%;
-  width: min(130vw, 760px); aspect-ratio: 1;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(closest-side, rgba(255, 220, 200, 0.22), rgba(176, 30, 52, 0.35) 40%, transparent 72%);
-}
-.curtain__brand picture { position: relative; }
-.curtain__brand img {
-  width: min(70vw, 420px);
-  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.55));
-}
-
-@keyframes brand-in {
-  from { opacity: 0; transform: scale(0.94) translateY(8px); }
-  to   { opacity: 1; transform: none; }
-}
-@keyframes brand-out {
-  from { opacity: 1; }
-  to   { opacity: 0; transform: scale(1.04); }
-}
 /* Perde, toplanarak (scaleX) dışa doğru açılır */
 @keyframes open-left {
   0%   { transform: none; }
