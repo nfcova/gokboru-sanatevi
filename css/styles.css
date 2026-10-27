@@ -282,10 +282,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
    menü açıkken kaldırılır ki panel tüm ekranı kaplasın. */
 .nav-open .site-header { backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--black); }
 .brand { flex: none; position: relative; z-index: 2; border-radius: var(--radius); }
-.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.brand__mark { height: 40px; filter: drop-shadow(0 0 10px rgba(192, 50, 70, 0.55)); }
-.brand picture { display: grid; place-items: center; width: 56px; height: 48px; border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(176, 30, 52, 0.9), rgba(122, 18, 36, 0.45) 60%, transparent); }
+.brand { display: flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; }
 .brand__name { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; line-height: 1; letter-spacing: 0.01em; white-space: nowrap; }
 .brand__name span { display: block; margin-top: 3px; font-family: var(--font-body); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; color: var(--cream-2); }
 
@@ -408,8 +405,6 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 @media (min-width: 960px) {
   :root { --header-h: 84px; }
-  .brand__mark { height: 52px; }
-  .brand picture { width: 72px; height: 62px; }
   .brand__name { font-size: 1.45rem; }
   .nav-toggle { display: none; }
   .site-nav {
