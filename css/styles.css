@@ -294,6 +294,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   display: inline-flex; align-items: center; gap: 10px;
   min-height: 44px; min-width: 44px; padding: 0 4px 0 12px;
   background: none; border: 0; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
 }
 .nav-toggle__bars { display: grid; gap: 5px; width: 24px; }
@@ -302,34 +303,108 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .nav-open .nav-toggle__bars span:nth-child(2) { opacity: 0; }
 .nav-open .nav-toggle__bars span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Mobil menü: tam ekran sahne paneli */
+/* Mobil menü: tam ekran sahne paneli.
+   Açılış: zemin kararır → yan perdeler kapanır → sahne ışığı yanar →
+   bağlantılar perde numaralarıyla sırayla yükselir → buton ve alt satır.
+   Kapanışta gecikme yoktur; hepsi birlikte hızla söner. */
 .site-nav {
   position: fixed; inset: 0; z-index: 1;
-  display: flex; flex-direction: column; justify-content: center; gap: 32px;
-  padding: calc(var(--header-h) + env(safe-area-inset-top) + 16px) var(--gutter) calc(32px + env(safe-area-inset-bottom));
-  background:
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(155, 28, 48, 0.35), transparent 70%),
-    var(--black);
-  overflow-y: auto;
+  display: flex; flex-direction: column; justify-content: center; gap: 28px;
+  padding: calc(var(--header-h) + env(safe-area-inset-top) + 16px) calc(var(--gutter) + clamp(18px, 9vw, 64px)) calc(28px + env(safe-area-inset-bottom));
+  background: var(--black);
+  overflow-x: hidden; overflow-y: auto;
   visibility: hidden;
   opacity: 0;
-  transform: translateY(-12px);
-  transition: opacity 0.35s var(--ease-out), transform 0.35s var(--ease-out), visibility 0s linear 0.35s;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
 }
 .nav-open .site-nav {
-  visibility: visible; opacity: 1; transform: none;
-  transition: opacity 0.35s var(--ease-out), transform 0.35s var(--ease-out), visibility 0s;
+  visibility: visible; opacity: 1;
+  transition: opacity 0.35s ease, visibility 0s;
 }
 .nav-open body { overflow: hidden; }
-.site-nav__list { display: grid; gap: 4px; }
+.site-nav__drape, .site-nav__foot { display: none; }
+.site-nav__list { display: grid; gap: 2px; counter-reset: perde; }
 .site-nav__list a {
   display: block; padding: 10px 0;
   font-family: var(--font-display); font-size: clamp(2rem, 9vw, 2.6rem); font-weight: 600;
   text-decoration: none; line-height: 1.15;
-  border-bottom: 1px solid var(--line);
 }
 .site-nav__list a.is-current { color: var(--bordo-400); }
 .site-nav__cta { align-self: stretch; }
+
+@media (max-width: 959.98px) {
+  /* Sahne ışığı */
+  .site-nav::before {
+    content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 0%, rgba(255, 228, 210, 0.13), transparent 70%),
+      radial-gradient(ellipse 90% 60% at 50% 100%, rgba(122, 18, 36, 0.35), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .nav-open .site-nav::before { opacity: 1; transition: opacity 1.1s ease 0.35s; }
+
+  /* Yanlardan kapanan kadife perdeler */
+  .site-nav__drape {
+    display: block;
+    position: fixed; top: 0; bottom: 0; z-index: -1;
+    width: clamp(22px, 9vw, 64px);
+    --fold: clamp(14px, 3vw, 26px);
+    filter: brightness(0.8);
+    transition: transform 0.3s ease-in;
+  }
+  .site-nav__drape--left { left: 0; transform: translateX(-105%); box-shadow: 14px 0 30px rgba(0, 0, 0, 0.7); border-bottom-right-radius: 60% 10%; }
+  .site-nav__drape--right { right: 0; transform: translateX(105%); box-shadow: -14px 0 30px rgba(0, 0, 0, 0.7); border-bottom-left-radius: 60% 10%; }
+  .nav-open .site-nav__drape { transform: none; transition: transform 0.8s var(--ease-curtain) 0.05s; }
+
+  /* Bağlantılar: perde numarası + sırayla yükselme + uzayan alt çizgi */
+  .site-nav__list li {
+    counter-increment: perde;
+    opacity: 0; transform: translateY(26px);
+    transition: opacity 0.2s ease, transform 0.25s ease;
+  }
+  .nav-open .site-nav__list li {
+    opacity: 1; transform: none;
+    transition: opacity 0.6s ease var(--d), transform 0.9s cubic-bezier(0.19, 1, 0.22, 1) var(--d);
+  }
+  .site-nav__list li:nth-child(1) { --d: 0.28s; }
+  .site-nav__list li:nth-child(2) { --d: 0.35s; }
+  .site-nav__list li:nth-child(3) { --d: 0.42s; }
+  .site-nav__list li:nth-child(4) { --d: 0.49s; }
+  .site-nav__list li:nth-child(5) { --d: 0.56s; }
+  .site-nav__list a {
+    position: relative;
+    display: grid; grid-template-columns: 2.4rem 1fr; align-items: baseline;
+    padding: 12px 0;
+    transition: color 0.25s, transform 0.35s var(--ease-out);
+  }
+  .site-nav__list a::before {
+    content: counter(perde, upper-roman) '.';
+    font-family: var(--font-display); font-style: italic; font-weight: 500;
+    font-size: 0.95rem; letter-spacing: 0.04em; color: var(--bordo-400);
+  }
+  .site-nav__list a::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+    background: linear-gradient(90deg, var(--bordo-500), var(--line) 40%, var(--line));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.2s ease;
+  }
+  .nav-open .site-nav__list a::after { transform: scaleX(1); transition: transform 0.9s var(--ease-out) calc(var(--d) + 0.12s); }
+  .site-nav__list a:active { transform: translateX(6px); }
+  .site-nav__list a.is-current::before { color: var(--cream); }
+
+  .site-nav__cta, .site-nav__foot {
+    opacity: 0; transform: translateY(18px);
+    transition: opacity 0.2s ease, transform 0.25s ease;
+  }
+  .nav-open .site-nav__cta { opacity: 1; transform: none; transition: opacity 0.6s ease 0.68s, transform 0.8s var(--ease-out) 0.68s, background-color 0.25s, box-shadow 0.25s; }
+  .site-nav__foot {
+    display: block; margin: 0;
+    font-family: var(--font-display); font-style: italic; font-size: 1rem;
+    text-align: center; color: var(--muted);
+  }
+  .nav-open .site-nav__foot { opacity: 1; transform: none; transition: opacity 0.8s ease 0.8s, transform 0.8s var(--ease-out) 0.8s; }
+}
 
 @media (min-width: 960px) {
   :root { --header-h: 84px; }
