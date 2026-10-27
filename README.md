@@ -74,12 +74,11 @@ Form adresi gizli bir anahtar değildir, ancak hiçbir API anahtarını veya par
 
 ## Logo
 
-Kaynak dosya: `brand/logo-orijinal.png` (şeffaf zemin üzerinde siyah kurt ve maske çizimi).
+Kaynak dosya: `brand/logo-orijinal.png` (şeffaf arka planlı, kırmızı-siyah kurt ve maske logosu, yarı saydam kırmızı parıltılı).
 
-- Sitenin zemini siyah olduğundan logo, **şekline dokunulmadan kırık beyaz renkte** (negatif sürüm) kullanılır (`assets/img/logo-*.webp`, `logo-480.png`). Yalnızca boş şeffaf kenarlar kırpılmıştır, oranlar korunmuştur.
-- Logonun arkasında CSS ile bordo bir sahne ışığı bulunur.
+- Sitede bu dosyanın yalnızca boş şeffaf kenarları kırpılmış, yeniden boyutlandırılmış sürümleri kullanılır (`assets/img/logo-*.webp`, `logo-480.png`). Renkler ve oranlar korunmuştur.
 - Logoda yazı olmadığından site adı menüde ve girişte düz metin olarak yer alır.
-- Favicon, uygulama simgeleri ve `og-image.jpg`, logonun koyu bordo zemin üzerindeki hâlidir.
+- Favicon, uygulama simgeleri ve `og-image.jpg`, logonun koyu zemin üzerindeki hâlidir.
 - Açılış perdesinde logo gösterilmez; logo, perde açıldıktan sonra sahnede belirir.
 
 ## Yayın

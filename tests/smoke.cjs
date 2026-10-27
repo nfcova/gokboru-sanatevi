@@ -71,7 +71,8 @@ const SAMPLE = `window.GOKBORU_ICERIK = {
       page.on('console', (m) => { if (m.type() === 'error' && !/fonts\.(googleapis|gstatic)/.test(m.text())) errors.push(m.text()); });
       await ctx.addInitScript(() => {
         new MutationObserver(() => {
-          if (!window.__perdeKalkti && document.body && !document.getElementById('curtain')) window.__perdeKalkti = performance.now();
+          if (document.getElementById('curtain')) window.__perdeGoruldu = true;
+          else if (window.__perdeGoruldu && !window.__perdeKalkti) window.__perdeKalkti = performance.now();
         }).observe(document, { childList: true, subtree: true });
       });
       await page.goto(URL);
@@ -184,6 +185,7 @@ const SAMPLE = `window.GOKBORU_ICERIK = {
       check(Math.abs(cTop) < 120, `"Gösteri İçin İletişime Geç" butonu iletişime götürüyor (top=${Math.round(cTop)})`);
 
       /* 6. Form (sunucu bağlı değil) */
+      await page.evaluate(() => { document.documentElement.style.scrollBehavior = 'auto'; });
       await page.evaluate(() => document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible')));
       await page.waitForTimeout(1000);
       await page.locator('#form-submit').tap();
