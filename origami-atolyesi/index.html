@@ -1,0 +1,1584 @@
+<!doctype html>
+<html lang="tr" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Origami Atölyesi | Hayal et, katla, oluştur!</title>
+<meta name="description" content="Origami Atölyesi; çocuklar ve aileler için kolay ve orta seviye origami setleri hazırlar. Kelebek, tilki, saplı gül, gemi ve zıplayan kurbağa koleksiyonumuzu keşfedin.">
+<meta name="keywords" content="origami, origami seti, çocuklar için origami, kâğıt katlama, aile etkinliği, el becerisi">
+<meta name="theme-color" content="#6A3FD0">
+<meta name="color-scheme" content="light">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:site_name" content="Origami Atölyesi">
+<meta property="og:title" content="Origami Atölyesi | Hayal et, katla, oluştur!">
+<meta property="og:description" content="Çocuklar ve aileler için origami setleri. İlk koleksiyonumuzu keşfedin.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='110 290 1020 630'%3E%3Cpolygon points='380,368 625,308 515,615' fill='%23F2500A'/%3E%3Cpolygon points='125,612 280,505 305,560 342,668' fill='%23FF9C00'/%3E%3Cpolygon points='280,505 305,560 342,668 437,905 497,705 505,648' fill='%23FFB800'/%3E%3Cpolygon points='808,570 1110,422 785,690 560,878' fill='%23FF9E00'/%3E%3Cpolygon points='1110,422 848,835 785,690' fill='%23B81AE6'/%3E%3Cpolygon points='785,690 848,835 560,878' fill='%236E10B4'/%3E%3Cpolygon points='497,705 808,570 560,878 437,905' fill='%23FF6A08'/%3E%3Cpolygon points='625,308 808,570 485,712' fill='%23FFC000'/%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Origami Atölyesi",
+  "slogan": "Hayal et, katla, oluştur!",
+  "sameAs": ["https://www.instagram.com/origamiatolyesitr/"],
+  "makesOffer": [
+    {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "001 – Kelebek", "sku": "001"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "002 – Tilki", "sku": "002"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "003 – Saplı Gül", "sku": "003"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "004 – Gemi", "sku": "004"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "005 – Zıplayan Kurbağa", "sku": "005"}}
+  ]
+}
+</script>
+
+<!-- Açılış animasyonunun yalnızca ilk ziyarette çalışması için, ilk boyamadan önce karar verilir. -->
+<script>
+(function () {
+  var d = document.documentElement, seen = false, reduced = false;
+  d.className = d.className.replace('no-js', 'js');
+  try { seen = localStorage.getItem('oa:intro-seen') === '1'; } catch (e) {}
+  try { reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+  if (seen || !('animate' in d)) { d.classList.add('intro-off'); }
+  else { d.classList.add('intro-on'); if (reduced) d.classList.add('intro-reduced'); }
+})();
+</script>
+
+<style>
+/* =========================================================
+   1. TASARIM DEĞİŞKENLERİ
+   ========================================================= */
+:root {
+  --purple: #6A3FD0;
+  --purple-600: #5A30B8;
+  --purple-700: #4B22A8;
+  --purple-900: #2A1260;
+  --purple-100: #E9E0FD;
+  --purple-50: #F5F0FF;
+  --yellow: #FFC83D;
+  --yellow-100: #FFF3CF;
+  --orange: #FF8A3D;
+  --orange-700: #C9561A;
+  --orange-100: #FFE6D4;
+  --green: #3E9B62;
+  --white: #FFFFFF;
+  --cream: #FFFBF4;
+  --ink: #1E1433;
+  --muted: #5B5273;
+  --line: #E7E0F5;
+
+  --font: "Nunito", "Quicksand", ui-rounded, "SF Pro Rounded", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --radius: 22px;
+  --radius-sm: 14px;
+  --shadow-sm: 0 2px 6px rgba(42, 18, 96, .06), 0 8px 24px rgba(42, 18, 96, .06);
+  --shadow-md: 0 10px 30px rgba(42, 18, 96, .12), 0 2px 8px rgba(42, 18, 96, .08);
+  --shadow-lg: 0 30px 60px -10px rgba(42, 18, 96, .28);
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  --container: 1180px;
+  --header-h: 72px;
+}
+
+/* =========================================================
+   2. TEMEL
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--header-h) + 12px); }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: var(--purple-600); }
+h1, h2, h3, h4 { line-height: 1.15; margin: 0 0 .5em; letter-spacing: -.01em; font-weight: 800; }
+p { margin: 0 0 1em; }
+button, input, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; border-radius: 8px; }
+.sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.container { width: min(100% - 32px, var(--container)); margin-inline: auto; }
+.skip-link { position: fixed; left: 16px; top: -60px; z-index: 2000; background: var(--purple-900); color: #fff; padding: 10px 16px; border-radius: 10px; text-decoration: none; font-weight: 700; transition: top .2s; }
+.skip-link:focus { top: 12px; }
+
+/* Butonlar */
+.btn {
+  --bg: var(--purple); --fg: #fff;
+  display: inline-flex; align-items: center; justify-content: center; gap: .55em;
+  min-height: 48px; padding: .75em 1.4em;
+  border: 0; border-radius: 999px; cursor: pointer;
+  background: var(--bg); color: var(--fg);
+  font-weight: 800; font-size: 1rem; text-decoration: none; line-height: 1.1;
+  box-shadow: 0 6px 0 var(--purple-700), 0 12px 24px rgba(106, 63, 208, .25);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease), background .2s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 0 var(--purple-700), 0 16px 30px rgba(106, 63, 208, .3); }
+.btn:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--purple-700), 0 6px 14px rgba(106, 63, 208, .25); }
+.btn--yellow { --bg: var(--yellow); --fg: var(--purple-900); box-shadow: 0 6px 0 #D9A21C, 0 12px 24px rgba(255, 200, 61, .35); }
+.btn--yellow:hover { box-shadow: 0 8px 0 #D9A21C, 0 16px 30px rgba(255, 200, 61, .4); }
+.btn--yellow:active { box-shadow: 0 2px 0 #D9A21C; }
+.btn--ghost { --bg: transparent; --fg: var(--purple-700); box-shadow: inset 0 0 0 2px var(--purple-100); }
+.btn--ghost:hover { --bg: var(--purple-50); box-shadow: inset 0 0 0 2px var(--purple); }
+.btn--ghost:active { box-shadow: inset 0 0 0 2px var(--purple); }
+.btn svg { width: 1.2em; height: 1.2em; flex: none; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: .5em;
+  font-size: .82rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--purple-600); margin-bottom: .9rem;
+}
+.eyebrow::before { content: ""; width: 14px; height: 14px; background: var(--orange); clip-path: polygon(0 0, 100% 0, 0 100%); }
+.section { padding: clamp(72px, 10vw, 128px) 0; position: relative; }
+.section__head { max-width: 680px; margin-bottom: clamp(32px, 5vw, 56px); }
+.section__head--center { margin-inline: auto; text-align: center; }
+.section__title { font-size: clamp(2rem, 4.4vw, 3rem); }
+.section__lead { color: var(--muted); font-size: 1.125rem; }
+.hl { position: relative; white-space: nowrap; z-index: 0; }
+.hl::after { content: ""; position: absolute; left: -4px; right: -4px; bottom: .08em; height: .38em; background: var(--yellow); border-radius: 6px; z-index: -1; transform: rotate(-1.5deg); }
+
+/* =========================================================
+   3. AÇILIŞ: KATLANAN KÂĞIT
+   ========================================================= */
+.intro { display: none; }
+.intro-on .intro {
+  --s: max(100vw, 100vh);
+  display: block; position: fixed; inset: 0; z-index: 1500; overflow: hidden;
+  perspective: calc(var(--s) * 1.8);
+  perspective-origin: 50% 45%;
+}
+.intro-on body { overflow: hidden; }
+.intro__backdrop {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 50% 45%, #F7F2FF 0%, #E6DBFB 55%, #D4C3F6 100%);
+}
+.paper {
+  position: absolute; left: 50%; top: 50%;
+  width: var(--s); height: var(--s);
+  margin: calc(var(--s) / -2) 0 0 calc(var(--s) / -2);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.q, .col, .qi { position: absolute; transform-style: preserve-3d; }
+.q { width: 50%; height: 50%; }
+.qi { inset: 0; }
+.q--tl { left: 0; top: 0; transform-origin: 50% 100%; }
+.q--bl { left: 0; top: 50%; }
+.col { left: 50%; top: 0; width: 50%; height: 100%; transform-origin: 0 50%; }
+.col .q { width: 100%; }
+.q--tr { left: 0; top: 0; transform-origin: 50% 100%; }
+.q--br { left: 0; top: 50%; }
+.q--tl .qi { transform-origin: 0 0; }
+.q--bl .qi { transform-origin: 0 100%; }
+.q--tr .qi { transform-origin: 100% 0; }
+.q--br .qi { transform-origin: 100% 100%; }
+
+.face {
+  position: absolute; inset: 0; overflow: hidden;
+  -webkit-backface-visibility: hidden; backface-visibility: hidden;
+}
+.face--front {
+  background-color: #fff;
+  background-image:
+    radial-gradient(circle at 30% 22%, #FFFFFF 0%, #FBFAFE 45%, #F1EDF9 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .3 0 0 0 0 .6 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200% 200%, 120px 120px;
+  background-blend-mode: multiply;
+}
+.q--tl .face--front { background-position: 0 0, 0 0; }
+.q--tr .face--front { background-position: 100% 0, 0 0; }
+.q--bl .face--front { background-position: 0 100%, 0 0; }
+.q--br .face--front { background-position: 100% 100%, 0 0; }
+.face--back {
+  transform: rotateY(180deg);
+  background: linear-gradient(160deg, #7B52E0 0%, #6A3FD0 45%, #5530B6 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08);
+}
+.q--tl .face--back, .q--tr .face--back { transform: rotateX(180deg); }
+.shade { position: absolute; inset: 0; background: #2A1260; opacity: 0; pointer-events: none; }
+.crease { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
+.q--tl .crease { background: linear-gradient(to left, rgba(90, 48, 184, .12), transparent 3%), linear-gradient(to top, rgba(90, 48, 184, .12), transparent 3%); }
+.q--tr .crease { background: linear-gradient(to right, rgba(255, 255, 255, .9), transparent 2.5%), linear-gradient(to top, rgba(90, 48, 184, .12), transparent 3%); }
+.q--bl .crease { background: linear-gradient(to left, rgba(90, 48, 184, .12), transparent 3%), linear-gradient(to bottom, rgba(255, 255, 255, .9), transparent 2.5%); }
+.q--br .crease { background: linear-gradient(to right, rgba(255, 255, 255, .9), transparent 2.5%), linear-gradient(to bottom, rgba(255, 255, 255, .9), transparent 2.5%); }
+
+.paper-brand {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+  color: #fff; padding: 8%;
+}
+.paper-brand svg { width: calc(var(--s) * .2); height: auto; margin-bottom: calc(var(--s) * .015); filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .2)); }
+.paper-brand strong { font-size: calc(var(--s) * .04); font-weight: 900; letter-spacing: -.01em; line-height: 1.05; }
+.paper-brand span { margin-top: calc(var(--s) * .008); font-size: calc(var(--s) * .017); font-weight: 700; color: var(--yellow); }
+
+.intro__skip {
+  position: absolute; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: 2; border: 0; cursor: pointer;
+  background: rgba(255, 255, 255, .85); color: var(--purple-700);
+  font-weight: 800; font-size: .9rem; padding: .6em 1.1em; border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+}
+.intro__skip:hover { background: #fff; }
+
+/* Hareket azaltma: sadece yumuşak bir geçiş */
+.intro-reduced .intro__skip { display: none; }
+
+/* =========================================================
+   4. ÜST MENÜ
+   ========================================================= */
+.header {
+  position: fixed; inset: 0 0 auto 0; z-index: 900; height: var(--header-h);
+  transition: background .3s, box-shadow .3s, backdrop-filter .3s;
+}
+.header.is-scrolled {
+  background: rgba(255, 251, 244, .86);
+  -webkit-backdrop-filter: saturate(1.4) blur(12px); backdrop-filter: saturate(1.4) blur(12px);
+  box-shadow: 0 1px 0 var(--line), 0 6px 24px rgba(42, 18, 96, .06);
+}
+.header__inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--purple-900); font-weight: 900; font-size: 1.2rem; letter-spacing: -.01em; }
+.logo svg { width: 60px; height: 38px; transition: transform .5s var(--ease); }
+.logo:hover svg { transform: rotate(-10deg) scale(1.06); }
+.logo small { display: block; font-size: .72rem; font-weight: 700; color: var(--orange-700); letter-spacing: .02em; margin-top: 2px; }
+.nav { display: flex; align-items: center; gap: 4px; }
+.nav a:not(.btn) {
+  position: relative; padding: .55em .85em; border-radius: 999px;
+  color: var(--ink); text-decoration: none; font-weight: 700; font-size: .98rem;
+  transition: color .2s, background .2s;
+}
+.nav a:not(.btn):hover { background: var(--purple-50); color: var(--purple-700); }
+.nav a.is-active { color: var(--purple-700); background: var(--purple-50); }
+.nav .btn { margin-left: 8px; min-height: 42px; padding: .6em 1.1em; font-size: .95rem; }
+.menu-toggle {
+  display: none; width: 46px; height: 46px; border: 0; border-radius: 14px; cursor: pointer;
+  background: var(--purple-50); color: var(--purple-700); position: relative;
+}
+.menu-toggle span, .menu-toggle span::before, .menu-toggle span::after {
+  position: absolute; left: 50%; top: 50%; width: 20px; height: 2.5px; margin-left: -10px; border-radius: 2px;
+  background: currentColor; transition: transform .3s var(--ease), opacity .2s; content: "";
+}
+.menu-toggle span::before { transform: translateY(-7px); left: 0; margin: 0; }
+.menu-toggle span::after { transform: translateY(7px); left: 0; margin: 0; }
+.menu-toggle[aria-expanded="true"] span { background: transparent; }
+.menu-toggle[aria-expanded="true"] span::before { transform: rotate(45deg); background: var(--purple-700); }
+.menu-toggle[aria-expanded="true"] span::after { transform: rotate(-45deg); background: var(--purple-700); }
+
+@media (max-width: 900px) {
+  .menu-toggle { display: inline-block; z-index: 2; }
+  .nav {
+    position: fixed; inset: 0; z-index: 1;
+    flex-direction: column; justify-content: center; gap: 6px; padding: 96px 24px 40px;
+    background: var(--purple-900);
+    clip-path: circle(0 at calc(100% - 39px) 36px);
+    visibility: hidden;
+    transition: clip-path .55s var(--ease), visibility 0s .55s;
+  }
+  .nav.is-open { clip-path: circle(150vmax at calc(100% - 39px) 36px); visibility: visible; transition: clip-path .6s var(--ease), visibility 0s; }
+  .nav a:not(.btn) { color: #fff; font-size: 1.5rem; font-weight: 800; padding: .45em 1em; }
+  .nav a:not(.btn):hover, .nav a.is-active { background: rgba(255, 255, 255, .1); color: var(--yellow); }
+  .nav .btn { margin: 18px 0 0; font-size: 1.05rem; min-height: 52px; }
+  .nav-open .menu-toggle { background: rgba(255, 255, 255, .12); color: #fff; }
+  .nav-open .menu-toggle span::before, .nav-open .menu-toggle span::after { background: #fff; }
+  .nav-open .logo { color: #fff; position: relative; z-index: 2; }
+  .nav-open .logo small { color: var(--yellow); }
+  body.nav-open { overflow: hidden; }
+}
+
+/* =========================================================
+   5. KARŞILAMA
+   ========================================================= */
+.hero {
+  position: relative; min-height: 100svh; display: flex; align-items: center;
+  padding: calc(var(--header-h) + 32px) 0 72px; overflow: hidden;
+  background:
+    linear-gradient(135deg, transparent 49.7%, rgba(106, 63, 208, .06) 50%, transparent 50.3%) 0 0 / 100% 100%,
+    linear-gradient(45deg, transparent 49.7%, rgba(106, 63, 208, .06) 50%, transparent 50.3%) 0 0 / 100% 100%,
+    radial-gradient(1200px 700px at 85% 10%, #EFE6FF 0%, transparent 60%),
+    radial-gradient(800px 600px at 0% 100%, #FFF1D6 0%, transparent 60%),
+    var(--cream);
+}
+.hero__grid { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: clamp(24px, 5vw, 72px); }
+.hero__badge {
+  display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px 6px 6px; margin-bottom: 22px;
+  background: #fff; border-radius: 999px; box-shadow: var(--shadow-sm);
+  font-weight: 700; font-size: .92rem; color: var(--purple-700);
+}
+.hero__badge b { background: var(--yellow); color: var(--purple-900); border-radius: 999px; padding: 3px 10px; font-size: .8rem; letter-spacing: .04em; }
+.hero h1 { font-size: clamp(2.6rem, 7vw, 5rem); font-weight: 900; color: var(--purple-900); margin-bottom: .3em; letter-spacing: -.025em; }
+.hero h1 .w { display: inline-block; }
+.hero h1 .w--1 { color: var(--purple); }
+.hero h1 .w--2 { color: var(--orange); }
+.hero h1 .w--3 { color: var(--purple-900); }
+.hero__brand { font-size: clamp(1.05rem, 1.6vw, 1.25rem); font-weight: 800; color: var(--orange-700); letter-spacing: .02em; margin-bottom: .6em; }
+.hero__lead { font-size: clamp(1.08rem, 1.5vw, 1.25rem); color: var(--muted); max-width: 34em; margin-bottom: 2rem; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.hero__facts { display: flex; flex-wrap: wrap; gap: 10px 28px; margin: 2.4rem 0 0; padding: 0; list-style: none; color: var(--muted); font-weight: 700; font-size: .95rem; }
+.hero__facts li { display: flex; align-items: center; gap: 8px; }
+.hero__facts svg { width: 22px; height: 22px; color: var(--purple); }
+
+.hero__art { position: relative; aspect-ratio: 1; width: 100%; max-width: 560px; justify-self: center; }
+.hero__blob {
+  position: absolute; inset: 8%;
+  background: linear-gradient(145deg, var(--yellow) 0%, #FFB22E 55%, var(--orange) 100%);
+  border-radius: 46% 54% 42% 58% / 50% 42% 58% 50%;
+  box-shadow: var(--shadow-lg);
+}
+.hero__blob::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit;
+  background: linear-gradient(135deg, transparent 49.5%, rgba(255, 255, 255, .35) 50%, transparent 50.5%), linear-gradient(45deg, transparent 49.5%, rgba(255, 255, 255, .25) 50%, transparent 50.5%);
+}
+.hero__crane { position: absolute; inset: 14% 10%; width: 80%; height: 72%; filter: drop-shadow(0 24px 30px rgba(42, 18, 96, .3)); }
+.float {
+  position: absolute; width: 22%; aspect-ratio: 1;
+  background: #fff; border-radius: 22px; padding: 3%;
+  box-shadow: var(--shadow-md);
+}
+.float svg { width: 100%; height: 100%; }
+.float--1 { left: -2%; top: 10%; transform: rotate(-10deg); }
+.float--2 { right: -1%; top: 4%; transform: rotate(8deg); width: 19%; }
+.float--3 { right: 2%; bottom: 6%; transform: rotate(-6deg); }
+.float--4 { left: 4%; bottom: 2%; transform: rotate(9deg); width: 18%; }
+@media (prefers-reduced-motion: no-preference) {
+  .float { animation: bob 6s ease-in-out infinite; }
+  .float--2 { animation-delay: -1.5s; animation-duration: 7s; }
+  .float--3 { animation-delay: -3s; }
+  .float--4 { animation-delay: -4.5s; animation-duration: 6.5s; }
+  .hero__crane { animation: glide 8s ease-in-out infinite; }
+}
+@keyframes bob { 50% { translate: 0 -14px; } }
+@keyframes glide { 50% { transform: translateY(-10px) rotate(-2deg); } }
+
+.scroll-cue {
+  position: absolute; left: 50%; bottom: 22px; translate: -50% 0;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  color: var(--muted); font-size: .8rem; font-weight: 700; text-decoration: none;
+}
+.scroll-cue i { width: 24px; height: 38px; border: 2px solid currentColor; border-radius: 14px; position: relative; opacity: .7; }
+.scroll-cue i::after { content: ""; position: absolute; left: 50%; top: 7px; width: 4px; height: 8px; margin-left: -2px; border-radius: 2px; background: var(--purple); }
+@media (prefers-reduced-motion: no-preference) { .scroll-cue i::after { animation: wheel 1.8s ease-in-out infinite; } }
+@keyframes wheel { 0% { opacity: 0; transform: translateY(0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(12px); } }
+
+@media (max-width: 900px) {
+  .hero { min-height: auto; padding-top: calc(var(--header-h) + 24px); }
+  .hero__grid { grid-template-columns: 1fr; }
+  .hero__art { max-width: 420px; order: -1; width: 86%; }
+  .scroll-cue { display: none; }
+}
+
+/* =========================================================
+   6. ÜRÜNLER
+   ========================================================= */
+.products { background: #fff; }
+.products::before {
+  content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 40px;
+  background: var(--cream); clip-path: polygon(0 0, 100% 0, 100% 0, 50% 100%, 0 0);
+}
+.filters { display: flex; flex-wrap: wrap; gap: 10px; margin: -12px 0 36px; }
+.filter {
+  border: 0; cursor: pointer; padding: .6em 1.2em; border-radius: 999px; min-height: 44px;
+  background: var(--purple-50); color: var(--purple-700); font-weight: 800; font-size: .95rem;
+  transition: background .2s, color .2s, transform .2s;
+}
+.filter:hover { transform: translateY(-1px); background: var(--purple-100); }
+.filter[aria-pressed="true"] { background: var(--purple); color: #fff; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: clamp(16px, 2.4vw, 28px); list-style: none; margin: 0; padding: 0; }
+.card { perspective: 900px; }
+.card[hidden] { display: none; }
+.card__btn {
+  --tint: var(--purple-50);
+  position: relative; display: flex; flex-direction: column; width: 100%; height: 100%; padding: 0; text-align: left;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius); cursor: pointer; overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transform-style: preserve-3d;
+  transition: transform .5s var(--ease), box-shadow .5s var(--ease), border-color .3s;
+}
+.card__btn:hover, .card__btn:focus-visible { box-shadow: var(--shadow-lg); border-color: var(--purple-100); }
+.card__media {
+  position: relative; aspect-ratio: 1 / .86; display: grid; place-items: center;
+  background:
+    linear-gradient(135deg, transparent 49.6%, rgba(255, 255, 255, .7) 50%, transparent 50.4%),
+    linear-gradient(45deg, transparent 49.6%, rgba(255, 255, 255, .5) 50%, transparent 50.4%),
+    var(--tint);
+  overflow: hidden;
+}
+.card__media svg { width: 62%; height: 62%; filter: drop-shadow(0 14px 16px rgba(42, 18, 96, .18)); transition: transform .6s var(--ease); }
+.card__btn:hover .card__media svg, .card__btn:focus-visible .card__media svg { transform: translateY(-8px) rotate(-4deg) scale(1.06); }
+/* Kıvrılan kâğıt köşesi */
+.card__media::after {
+  content: ""; position: absolute; right: 0; top: 0; width: 0; height: 0;
+  background: linear-gradient(225deg, var(--cream) 50%, rgba(42, 18, 96, .12) 50%, #fff 62%);
+  box-shadow: -4px 4px 10px rgba(42, 18, 96, .12);
+  border-bottom-left-radius: 8px;
+  transition: width .45s var(--ease), height .45s var(--ease);
+}
+.card__btn:hover .card__media::after, .card__btn:focus-visible .card__media::after { width: 54px; height: 54px; }
+.card__no {
+  position: absolute; left: 16px; top: 14px;
+  font-size: .85rem; font-weight: 900; letter-spacing: .08em; color: var(--purple-700);
+  background: rgba(255, 255, 255, .85); padding: 4px 10px; border-radius: 999px;
+}
+.card__body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.card__title { font-size: 1.3rem; margin: 0; color: var(--ink); }
+.card__meta { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; }
+.card__more { display: inline-flex; align-items: center; gap: 6px; font-weight: 800; font-size: .92rem; color: var(--purple-600); }
+.card__more svg { width: 18px; height: 18px; transition: transform .3s var(--ease); }
+.card__btn:hover .card__more svg { transform: translateX(4px); }
+
+.level {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: .82rem; font-weight: 800; padding: 5px 11px 5px 9px; border-radius: 999px;
+}
+.level i { display: inline-flex; gap: 3px; }
+.level i::before, .level i::after, .level i b { content: ""; width: 7px; height: 7px; border-radius: 2px; background: currentColor; opacity: .25; transform: rotate(45deg); }
+.level--kolay { background: var(--yellow-100); color: #8A5A00; }
+.level--kolay i::before { opacity: 1; }
+.level--orta { background: var(--orange-100); color: var(--orange-700); }
+.level--orta i::before, .level--orta i b { opacity: 1; }
+
+.products__note { margin-top: 36px; text-align: center; color: var(--muted); }
+
+/* =========================================================
+   7. ÜRÜN DETAYI (DIALOG)
+   ========================================================= */
+.modal {
+  width: min(100% - 24px, 880px); max-height: min(92vh, 760px); padding: 0; border: 0;
+  border-radius: 28px; background: #fff; color: var(--ink); box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+.modal::backdrop { background: rgba(30, 20, 51, .55); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.modal[open] { display: grid; }
+@media (prefers-reduced-motion: no-preference) {
+  .modal[open] { animation: modalIn .5s var(--ease); }
+  .modal[open]::backdrop { animation: fadeIn .3s ease; }
+  .modal.is-closing { animation: modalOut .25s ease forwards; }
+}
+@keyframes modalIn { from { opacity: 0; transform: perspective(900px) rotateX(-14deg) translateY(30px) scale(.96); } }
+@keyframes modalOut { to { opacity: 0; transform: translateY(16px) scale(.97); } }
+@keyframes fadeIn { from { opacity: 0; } }
+.modal__inner { display: grid; grid-template-columns: 1fr 1.1fr; overflow: auto; max-height: inherit; }
+.modal__media { --tint: var(--purple-50); position: relative; display: grid; place-items: center; padding: 36px; background: linear-gradient(135deg, transparent 49.7%, rgba(255,255,255,.7) 50%, transparent 50.3%), linear-gradient(45deg, transparent 49.7%, rgba(255,255,255,.5) 50%, transparent 50.3%), var(--tint); min-height: 280px; }
+.modal__media svg { width: 78%; max-width: 320px; filter: drop-shadow(0 18px 22px rgba(42, 18, 96, .2)); }
+.modal__body { padding: clamp(24px, 4vw, 40px); }
+.modal__no { font-weight: 900; color: var(--purple); letter-spacing: .1em; font-size: .9rem; }
+.modal__title { font-size: clamp(1.8rem, 3.6vw, 2.4rem); margin: .2em 0 .4em; }
+.modal__desc { color: var(--muted); }
+.specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 20px 0; }
+.spec { background: var(--purple-50); border-radius: var(--radius-sm); padding: 12px; text-align: center; }
+.spec b { display: block; font-size: 1.15rem; color: var(--purple-900); }
+.spec span { font-size: .78rem; color: var(--muted); font-weight: 700; }
+.includes { list-style: none; padding: 0; margin: 0 0 24px; display: grid; gap: 8px; }
+.includes li { display: flex; gap: 10px; align-items: flex-start; }
+.includes li::before { content: ""; flex: none; width: 18px; height: 18px; margin-top: 4px; background: var(--orange); clip-path: polygon(0 0, 100% 50%, 0 100%, 25% 50%); }
+.modal__actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.modal__close {
+  position: absolute; right: 14px; top: 14px; z-index: 2; width: 44px; height: 44px; border-radius: 50%; border: 0; cursor: pointer;
+  background: rgba(255, 255, 255, .92); color: var(--purple-900); box-shadow: var(--shadow-sm);
+  display: grid; place-items: center; transition: transform .3s var(--ease), background .2s;
+}
+.modal__close:hover { transform: rotate(90deg); background: #fff; }
+.modal__close svg { width: 20px; height: 20px; }
+.modal__nav { display: flex; gap: 8px; margin-left: auto; }
+.icon-btn { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--purple-100); background: #fff; color: var(--purple-700); cursor: pointer; display: grid; place-items: center; transition: background .2s, border-color .2s; }
+.icon-btn:hover { background: var(--purple-50); border-color: var(--purple); }
+.icon-btn svg { width: 20px; height: 20px; }
+@media (max-width: 700px) {
+  .modal { width: 100%; max-width: 100%; max-height: 92vh; margin: auto auto 0; border-radius: 28px 28px 0 0; }
+  .modal__inner { grid-template-columns: 1fr; }
+  .modal__media { min-height: 0; padding: 28px; aspect-ratio: 16 / 10; }
+  .modal__media svg { width: auto; height: 100%; max-height: 220px; }
+  .modal__actions .btn { flex: 1 1 100%; }
+  .modal__nav { margin: 0 auto; }
+}
+
+/* =========================================================
+   8. ORIGAMI NEDİR?
+   ========================================================= */
+.about { background: var(--purple-900); color: #EDE6FF; overflow: hidden; }
+.about::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+  background:
+    linear-gradient(135deg, transparent 49.85%, rgba(255,255,255,.08) 50%, transparent 50.15%),
+    linear-gradient(45deg, transparent 49.85%, rgba(255,255,255,.08) 50%, transparent 50.15%);
+}
+.about .eyebrow { color: var(--yellow); }
+.about .section__title { color: #fff; }
+.about .section__lead { color: #CFC2F2; }
+.about__grid { position: relative; display: grid; grid-template-columns: .95fr 1.05fr; gap: clamp(32px, 6vw, 80px); align-items: start; }
+.kanji {
+  display: flex; gap: 18px; align-items: center; margin: 28px 0;
+  background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .1); border-radius: var(--radius); padding: 20px 22px;
+}
+.kanji__jp { font-size: clamp(2.4rem, 5vw, 3.4rem); font-weight: 700; color: var(--yellow); line-height: 1; font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif; }
+.kanji p { margin: 0; font-size: .98rem; }
+.kanji b { color: #fff; }
+.timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 19px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--yellow), var(--orange), rgba(255,255,255,.1)); }
+.timeline li { position: relative; padding: 0 0 28px 60px; }
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li::before {
+  content: ""; position: absolute; left: 8px; top: 2px; width: 24px; height: 24px;
+  background: var(--purple-900); border: 3px solid var(--yellow); transform: rotate(45deg); border-radius: 4px;
+}
+.timeline time, .timeline .era { display: inline-block; font-size: .82rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--yellow); margin-bottom: 4px; }
+.timeline h3 { font-size: 1.2rem; color: #fff; margin-bottom: .3em; }
+.timeline p { margin: 0; color: #CFC2F2; font-size: 1rem; }
+
+/* =========================================================
+   9. ÇOCUKLAR İÇİN
+   ========================================================= */
+.kids { background: var(--cream); }
+.benefits { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(14px, 2vw, 24px); list-style: none; padding: 0; margin: 0; }
+.benefit {
+  --c: var(--purple); --bg: var(--purple-50);
+  position: relative; background: #fff; border-radius: var(--radius); padding: 28px 24px 26px;
+  border: 1px solid var(--line); box-shadow: var(--shadow-sm); overflow: hidden;
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+.benefit:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.benefit::after { content: ""; position: absolute; right: -30px; bottom: -30px; width: 100px; height: 100px; background: var(--bg); transform: rotate(45deg); border-radius: 14px; z-index: 0; transition: transform .6s var(--ease); }
+.benefit:hover::after { transform: rotate(60deg) scale(1.15); }
+.benefit > * { position: relative; z-index: 1; }
+.benefit__icon { width: 58px; height: 58px; border-radius: 18px; display: grid; place-items: center; background: var(--bg); color: var(--c); margin-bottom: 18px; }
+.benefit__icon svg { width: 30px; height: 30px; }
+.benefit h3 { font-size: 1.25rem; }
+.benefit p { color: var(--muted); margin: 0; font-size: 1rem; }
+.benefit--2 { --c: var(--orange-700); --bg: var(--orange-100); }
+.benefit--3 { --c: #8A5A00; --bg: var(--yellow-100); }
+.benefit--4 { --c: var(--purple-700); --bg: var(--purple-100); }
+.quote {
+  margin: clamp(32px, 5vw, 56px) auto 0; max-width: 820px; text-align: center;
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem); font-weight: 800; color: var(--purple-900); line-height: 1.4;
+}
+.quote::before { content: "“"; display: block; font-size: 4rem; line-height: .6; color: var(--orange); margin-bottom: 8px; }
+@media (max-width: 1000px) { .benefits { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .benefits { grid-template-columns: 1fr; } }
+
+/* =========================================================
+   10. AİLECE BİRLİKTE
+   ========================================================= */
+.family { background: #fff; }
+.family__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+.family__art {
+  position: relative; aspect-ratio: 5 / 4; border-radius: 32px; overflow: hidden;
+  background: linear-gradient(160deg, var(--purple) 0%, var(--purple-700) 100%);
+  box-shadow: var(--shadow-lg);
+}
+.family__art svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.family__tag {
+  position: absolute; left: 20px; bottom: 20px; background: #fff; color: var(--purple-900); border-radius: 16px;
+  padding: 12px 16px; font-weight: 800; font-size: .95rem; box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 10px;
+}
+.family__tag span { font-size: 1.5rem; }
+.tips { list-style: none; padding: 0; margin: 24px 0 32px; display: grid; gap: 14px; counter-reset: tip; }
+.tips li { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; counter-increment: tip; }
+.tips li::before {
+  content: counter(tip); width: 44px; height: 44px; display: grid; place-items: center;
+  background: var(--yellow); color: var(--purple-900); font-weight: 900; border-radius: 14px; transform: rotate(-6deg);
+}
+.tips li:nth-child(2)::before { background: var(--orange); color: #fff; transform: rotate(5deg); }
+.tips li:nth-child(3)::before { background: var(--purple); color: #fff; }
+.tips b { display: block; color: var(--ink); font-size: 1.08rem; }
+.tips span { color: var(--muted); font-size: 1rem; }
+@media (max-width: 900px) {
+  .family__grid, .about__grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   11. İLETİŞİM
+   ========================================================= */
+.contact { background: linear-gradient(180deg, var(--purple-50) 0%, var(--cream) 100%); }
+.contact__grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(20px, 4vw, 40px); align-items: stretch; }
+.insta {
+  position: relative; overflow: hidden; border-radius: 28px; padding: clamp(28px, 4vw, 44px); color: #fff;
+  background: radial-gradient(circle at 20% 110%, var(--yellow) 0%, var(--orange) 30%, transparent 60%), linear-gradient(140deg, var(--purple) 0%, var(--purple-900) 100%);
+  box-shadow: var(--shadow-lg); display: flex; flex-direction: column;
+}
+.insta::after { content: ""; position: absolute; right: -60px; top: -60px; width: 220px; height: 220px; background: rgba(255,255,255,.08); transform: rotate(45deg); border-radius: 28px; }
+.insta svg.insta__logo { width: 56px; height: 56px; margin-bottom: 20px; }
+.insta h3 { font-size: clamp(1.6rem, 3vw, 2rem); }
+.insta p { color: #EDE6FF; }
+.insta__handle { font-size: 1.25rem; font-weight: 900; color: var(--yellow); margin-bottom: 24px; word-break: break-all; }
+.insta .btn { align-self: flex-start; margin-top: auto; }
+.form { background: #fff; border-radius: 28px; padding: clamp(24px, 4vw, 40px); box-shadow: var(--shadow-md); border: 1px solid var(--line); }
+.form h3 { font-size: 1.5rem; }
+.form > p { color: var(--muted); }
+.field { display: grid; gap: 6px; margin-bottom: 16px; }
+.field label { font-weight: 800; font-size: .95rem; }
+.field input, .field textarea {
+  width: 100%; padding: 13px 16px; border-radius: 14px; border: 2px solid var(--line); background: var(--cream);
+  transition: border-color .2s, box-shadow .2s, background .2s; font-size: 1rem;
+}
+.field textarea { min-height: 120px; resize: vertical; }
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--purple); background: #fff; box-shadow: 0 0 0 4px rgba(106, 63, 208, .15); }
+.field [aria-invalid="true"] { border-color: #D33A55; }
+.field__error { color: #B3213D; font-size: .88rem; font-weight: 700; min-height: 0; }
+.field__error:empty { display: none; }
+.form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+.form__status { margin: 14px 0 0; font-weight: 700; color: var(--green); }
+.form__status:empty { display: none; }
+@media (max-width: 900px) { .contact__grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .form__row { grid-template-columns: 1fr; } }
+
+/* =========================================================
+   12. ALT BİLGİ
+   ========================================================= */
+.footer { background: var(--purple-900); color: #CFC2F2; padding: 56px 0 calc(28px + env(safe-area-inset-bottom)); }
+.footer__top { display: flex; flex-wrap: wrap; gap: 28px; justify-content: space-between; align-items: center; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,.1); }
+.footer .logo { color: #fff; }
+.footer .logo small { color: var(--yellow); }
+.footer__nav { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.footer__nav a { color: #EDE6FF; text-decoration: none; font-weight: 700; }
+.footer__nav a:hover { color: var(--yellow); }
+.footer__bottom { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; padding-top: 22px; font-size: .92rem; }
+.link-btn { background: none; border: 0; padding: 4px 0; cursor: pointer; color: var(--yellow); font-weight: 800; text-decoration: underline; text-underline-offset: 4px; }
+.to-top {
+  position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 800;
+  width: 48px; height: 48px; border-radius: 16px; border: 0; cursor: pointer;
+  background: var(--purple); color: #fff; box-shadow: var(--shadow-md);
+  display: grid; place-items: center; opacity: 0; visibility: hidden; transform: translateY(12px) rotate(45deg);
+  transition: opacity .3s, transform .4s var(--ease), visibility 0s .3s;
+}
+.to-top svg { width: 22px; height: 22px; transform: rotate(-45deg); }
+.to-top.is-visible { opacity: 1; visibility: visible; transform: rotate(45deg); transition: opacity .3s, transform .4s var(--ease); }
+.to-top:hover { background: var(--purple-700); }
+
+/* =========================================================
+   13. KAYDIRMA İLE BELİRME
+   ========================================================= */
+.js [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity .8s var(--ease), transform .8s var(--ease); transition-delay: var(--d, 0s); }
+.js [data-reveal="left"] { transform: translateX(-28px); }
+.js [data-reveal="zoom"] { transform: scale(.92) rotate(-3deg); }
+.js [data-reveal].is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal] { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+</style>
+</head>
+
+<body>
+<a class="skip-link" href="#icerik">İçeriğe geç</a>
+
+<!-- =====================================================
+     SVG SEMBOLLERİ (logo ve ürün görselleri)
+     ===================================================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="logo-mark" viewBox="110 290 1020 630">
+      <linearGradient id="lg-wingb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF6A00"/><stop offset="1" stop-color="#E8300E"/></linearGradient>
+      <linearGradient id="lg-wingf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFC800"/><stop offset="1" stop-color="#FF9A00"/></linearGradient>
+      <linearGradient id="lg-neck" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFC400"/><stop offset="1" stop-color="#FF9800"/></linearGradient>
+      <linearGradient id="lg-fold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF8A00"/><stop offset="1" stop-color="#F0440E"/></linearGradient>
+      <linearGradient id="lg-tail" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FF8C00"/><stop offset="1" stop-color="#FFB000"/></linearGradient>
+      <linearGradient id="lg-purp" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D81EF2"/><stop offset="1" stop-color="#9B16D8"/></linearGradient>
+      <linearGradient id="lg-purp2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8E12CC"/><stop offset="1" stop-color="#5E0E9E"/></linearGradient>
+      <polygon points="380,368 625,308 515,615" fill="url(#lg-wingb)"/>
+      <polygon points="125,612 280,505 305,560" fill="#FFB000"/>
+      <polygon points="125,612 305,560 342,668" fill="#FF8C00"/>
+      <polygon points="280,505 305,560 342,668 437,905 497,705 505,648" fill="url(#lg-neck)"/>
+      <polygon points="808,570 1110,422 785,690 560,878" fill="url(#lg-tail)"/>
+      <polygon points="1110,422 848,835 785,690" fill="url(#lg-purp)"/>
+      <polygon points="785,690 848,835 560,878" fill="url(#lg-purp2)"/>
+      <polygon points="497,705 560,878 437,905" fill="#FFA200"/>
+      <polygon points="497,705 808,570 560,878" fill="url(#lg-fold)"/>
+      <polygon points="625,308 808,570 485,712" fill="url(#lg-wingf)"/>
+    </symbol>
+
+    <symbol id="i-kelebek" viewBox="0 0 200 200">
+      <polygon points="98,96 30,34 20,98" fill="#7B4FE0"/>
+      <polygon points="98,96 30,34 56,82" fill="#9C7BF0"/>
+      <polygon points="98,104 24,112 58,168" fill="#FFC83D"/>
+      <polygon points="98,104 24,112 66,126" fill="#FFB21E"/>
+      <polygon points="102,96 170,34 180,98" fill="#5A30B8"/>
+      <polygon points="102,96 170,34 144,82" fill="#7B4FE0"/>
+      <polygon points="102,104 176,112 142,168" fill="#FF8A3D"/>
+      <polygon points="102,104 176,112 134,126" fill="#FF9F5C"/>
+      <rect x="94" y="68" width="12" height="70" rx="6" fill="#2A1260"/>
+      <path d="M97 72 Q90 52 78 44 M103 72 Q110 52 122 44" stroke="#2A1260" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="i-tilki" viewBox="0 0 200 200">
+      <polygon points="42,64 58,20 88,64" fill="#C9561A"/>
+      <polygon points="56,60 62,36 78,60" fill="#FFE3C2"/>
+      <polygon points="158,64 142,20 112,64" fill="#E9741F"/>
+      <polygon points="144,60 138,36 122,60" fill="#FFE3C2"/>
+      <polygon points="36,64 100,64 100,172" fill="#FF8A3D"/>
+      <polygon points="164,64 100,64 100,172" fill="#E9741F"/>
+      <polygon points="62,106 100,106 100,172" fill="#FFF7EC"/>
+      <polygon points="138,106 100,106 100,172" fill="#EFE3D3"/>
+      <polygon points="36,64 62,106 52,78" fill="#FFA463"/>
+      <polygon points="88,158 112,158 100,174" fill="#2A1260"/>
+      <polygon points="66,88 84,82 80,96" fill="#2A1260"/>
+      <polygon points="134,88 116,82 120,96" fill="#2A1260"/>
+    </symbol>
+
+    <symbol id="i-gul" viewBox="0 0 200 200">
+      <rect x="96" y="104" width="8" height="84" rx="4" fill="#3E9B62"/>
+      <polygon points="100,152 56,128 74,164" fill="#4FB477"/>
+      <polygon points="100,152 56,128 84,146" fill="#3E9B62"/>
+      <polygon points="100,138 146,114 128,150" fill="#3E9B62"/>
+      <polygon points="100,138 146,114 118,132" fill="#2F8452"/>
+      <polygon points="100,22 148,50 100,70" fill="#A383F2"/>
+      <polygon points="52,50 100,22 100,70" fill="#8C66EC"/>
+      <polygon points="52,50 100,70 58,102" fill="#6A3FD0"/>
+      <polygon points="148,50 100,70 142,102" fill="#5A30B8"/>
+      <polygon points="58,102 100,70 100,122" fill="#4B22A8"/>
+      <polygon points="142,102 100,70 100,122" fill="#3B1A8F"/>
+      <polygon points="100,52 116,70 100,88 84,70" fill="#FFC83D"/>
+      <polygon points="100,52 116,70 100,70" fill="#FFB21E"/>
+    </symbol>
+
+    <symbol id="i-gemi" viewBox="0 0 200 200">
+      <polygon points="100,34 58,124 100,124" fill="#FFC83D"/>
+      <polygon points="100,34 142,124 100,124" fill="#FFB21E"/>
+      <polygon points="22,124 100,124 100,162 50,162" fill="#7B4FE0"/>
+      <polygon points="178,124 100,124 100,162 150,162" fill="#5A30B8"/>
+      <polygon points="22,124 50,162 60,124" fill="#9C7BF0"/>
+      <path d="M8 178 q16 -10 32 0 t32 0 t32 0 t32 0 t32 0 t32 0" stroke="#FF8A3D" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="i-kurbaga" viewBox="0 0 200 200">
+      <polygon points="40,150 18,172 80,166" fill="#2F8452"/>
+      <polygon points="160,150 182,172 120,166" fill="#246B42"/>
+      <polygon points="40,152 100,64 100,152" fill="#4FB477"/>
+      <polygon points="160,152 100,64 100,152" fill="#3E9B62"/>
+      <polygon points="72,152 100,110 100,152" fill="#C9EED3"/>
+      <polygon points="128,152 100,110 100,152" fill="#AEE2BD"/>
+      <polygon points="76,150 64,172 94,160" fill="#3E9B62"/>
+      <polygon points="124,150 136,172 106,160" fill="#2F8452"/>
+      <circle cx="80" cy="82" r="15" fill="#fff" stroke="#2F8452" stroke-width="4"/>
+      <circle cx="120" cy="82" r="15" fill="#fff" stroke="#2F8452" stroke-width="4"/>
+      <circle cx="83" cy="84" r="6.5" fill="#2A1260"/>
+      <circle cx="117" cy="84" r="6.5" fill="#2A1260"/>
+      <path d="M88 124 q12 8 24 0" stroke="#246B42" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="ic-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="ic-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+    <symbol id="ic-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="ic-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/></symbol>
+    <symbol id="ic-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<!-- =====================================================
+     AÇILIŞ ANİMASYONU: KATLANAN KÂĞIT
+     ===================================================== -->
+<div class="intro" id="intro">
+  <div class="intro__backdrop" id="introBackdrop"></div>
+  <div class="paper" id="paper" aria-hidden="true">
+    <div class="q q--tl" id="qTL"><div class="qi">
+      <div class="face face--front"><span class="crease"></span><span class="shade"></span></div>
+      <div class="face face--back"><span class="shade"></span></div>
+    </div></div>
+    <div class="q q--bl" id="qBL"><div class="qi">
+      <div class="face face--front"><span class="crease"></span><span class="shade"></span></div>
+      <div class="face face--back"></div>
+    </div></div>
+    <div class="col" id="paperCol">
+      <div class="q q--tr" id="qTR"><div class="qi">
+        <div class="face face--front"><span class="crease"></span><span class="shade"></span></div>
+        <div class="face face--back"><span class="shade"></span></div>
+      </div></div>
+      <div class="q q--br" id="qBR"><div class="qi">
+        <div class="face face--front"><span class="crease"></span><span class="shade"></span></div>
+        <div class="face face--back">
+          <div class="paper-brand">
+            <svg viewBox="0 0 1020 630"><use href="#logo-mark"/></svg>
+            <strong>Origami Atölyesi</strong>
+            <span>Hayal et, katla, oluştur!</span>
+          </div>
+          <span class="shade"></span>
+        </div>
+      </div></div>
+    </div>
+  </div>
+  <button class="intro__skip" type="button" id="introSkip">Geç</button>
+</div>
+
+<!-- =====================================================
+     ÜST MENÜ
+     ===================================================== -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a class="logo" href="#anasayfa" aria-label="Origami Atölyesi – Ana sayfa">
+      <svg viewBox="0 0 1020 630" aria-hidden="true"><use href="#logo-mark"/></svg>
+      <span>Origami Atölyesi<small>Hayal et, katla, oluştur!</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menüyü aç"><span></span></button>
+    <nav class="nav" id="nav" aria-label="Ana menü">
+      <a href="#urunler">Ürünlerimiz</a>
+      <a href="#origami-nedir">Origami nedir?</a>
+      <a href="#cocuklar">Çocuklar için</a>
+      <a href="#ailece">Ailece birlikte</a>
+      <a href="#iletisim">İletişim</a>
+      <a class="btn btn--yellow" href="https://www.instagram.com/origamiatolyesitr/" target="_blank" rel="noopener noreferrer">
+        <svg aria-hidden="true"><use href="#ic-insta"/></svg>Instagram
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="icerik">
+
+  <!-- KARŞILAMA -->
+  <section class="hero" id="anasayfa" aria-labelledby="hero-title">
+    <div class="container hero__grid">
+      <div>
+        <p class="hero__badge" data-reveal><b>YENİ</b> İlk koleksiyonumuz yayında</p>
+        <p class="hero__brand" data-reveal style="--d:.05s">Origami Atölyesi</p>
+        <h1 id="hero-title" data-reveal style="--d:.1s">
+          <span class="w w--1">Hayal et,</span>
+          <span class="w w--2">katla,</span>
+          <span class="w w--3">oluştur!</span>
+        </h1>
+        <p class="hero__lead" data-reveal style="--d:.2s">
+          Tek bir kare kâğıttan kelebekler, tilkiler ve gemiler doğuyor. Origami Atölyesi; çocukların ve ailelerin
+          birlikte keşfedebileceği, adım adım anlatımlı origami setleri hazırlar.
+        </p>
+        <div class="hero__actions" data-reveal style="--d:.3s">
+          <a class="btn" href="#urunler">Ürünleri keşfet <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a>
+          <a class="btn btn--ghost" href="#origami-nedir">Origami nedir?</a>
+        </div>
+        <ul class="hero__facts" data-reveal style="--d:.4s">
+          <li><svg aria-hidden="true"><use href="#ic-check"/></svg>5 yaş ve üzeri</li>
+          <li><svg aria-hidden="true"><use href="#ic-check"/></svg>Adım adım rehber</li>
+          <li><svg aria-hidden="true"><use href="#ic-check"/></svg>Ailece etkinlik</li>
+        </ul>
+      </div>
+
+      <div class="hero__art" data-reveal="zoom" style="--d:.15s" role="img" aria-label="Origami turna ve koleksiyondan kelebek, gemi, tilki ve kurbağa figürleri">
+        <div class="hero__blob"></div>
+        <svg class="hero__crane" viewBox="0 0 1020 630" aria-hidden="true"><use href="#logo-mark"/></svg>
+        <div class="float float--1"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#i-kelebek"/></svg></div>
+        <div class="float float--2"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#i-gemi"/></svg></div>
+        <div class="float float--3"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#i-tilki"/></svg></div>
+        <div class="float float--4"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#i-kurbaga"/></svg></div>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#urunler" aria-label="Ürünler bölümüne kaydır"><i></i>Kaydır</a>
+  </section>
+
+  <!-- ÜRÜNLERİMİZ -->
+  <section class="section products" id="urunler" aria-labelledby="urunler-title">
+    <div class="container">
+      <div class="section__head" data-reveal>
+        <p class="eyebrow">İlk koleksiyon</p>
+        <h2 class="section__title" id="urunler-title">Ürünlerimiz</h2>
+        <p class="section__lead">Her set, tek başına ya da ailece katlanabilecek şekilde tasarlandı. Bir ürüne dokunarak ayrıntılarını görebilirsiniz.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Zorluk seviyesine göre filtrele" data-reveal>
+        <button class="filter" type="button" data-filter="all" aria-pressed="true">Tümü</button>
+        <button class="filter" type="button" data-filter="kolay" aria-pressed="false">Kolay</button>
+        <button class="filter" type="button" data-filter="orta" aria-pressed="false">Orta</button>
+      </div>
+
+      <ul class="grid" id="productGrid">
+        <li class="card" data-level="kolay" data-reveal>
+          <button class="card__btn" type="button" data-product="001" style="--tint:#EFE8FF" aria-haspopup="dialog">
+            <span class="card__media">
+              <span class="card__no">No. 001</span>
+              <svg viewBox="0 0 200 200" role="img" aria-label="Origami kelebek görseli"><use href="#i-kelebek"/></svg>
+            </span>
+            <span class="card__body">
+              <h3 class="card__title">Kelebek</h3>
+              <span class="card__meta">
+                <span class="level level--kolay"><i><b></b></i>Kolay</span>
+                <span class="card__more">Detaylar <svg aria-hidden="true"><use href="#ic-arrow"/></svg></span>
+              </span>
+            </span>
+          </button>
+        </li>
+        <li class="card" data-level="kolay" data-reveal style="--d:.08s">
+          <button class="card__btn" type="button" data-product="002" style="--tint:#FFEADB" aria-haspopup="dialog">
+            <span class="card__media">
+              <span class="card__no">No. 002</span>
+              <svg viewBox="0 0 200 200" role="img" aria-label="Origami tilki görseli"><use href="#i-tilki"/></svg>
+            </span>
+            <span class="card__body">
+              <h3 class="card__title">Tilki</h3>
+              <span class="card__meta">
+                <span class="level level--kolay"><i><b></b></i>Kolay</span>
+                <span class="card__more">Detaylar <svg aria-hidden="true"><use href="#ic-arrow"/></svg></span>
+              </span>
+            </span>
+          </button>
+        </li>
+        <li class="card" data-level="orta" data-reveal style="--d:.16s">
+          <button class="card__btn" type="button" data-product="003" style="--tint:#F3EAFF" aria-haspopup="dialog">
+            <span class="card__media">
+              <span class="card__no">No. 003</span>
+              <svg viewBox="0 0 200 200" role="img" aria-label="Origami saplı gül görseli"><use href="#i-gul"/></svg>
+            </span>
+            <span class="card__body">
+              <h3 class="card__title">Saplı Gül</h3>
+              <span class="card__meta">
+                <span class="level level--orta"><i><b></b></i>Orta</span>
+                <span class="card__more">Detaylar <svg aria-hidden="true"><use href="#ic-arrow"/></svg></span>
+              </span>
+            </span>
+          </button>
+        </li>
+        <li class="card" data-level="kolay" data-reveal style="--d:.24s">
+          <button class="card__btn" type="button" data-product="004" style="--tint:#FFF4D6" aria-haspopup="dialog">
+            <span class="card__media">
+              <span class="card__no">No. 004</span>
+              <svg viewBox="0 0 200 200" role="img" aria-label="Origami gemi görseli"><use href="#i-gemi"/></svg>
+            </span>
+            <span class="card__body">
+              <h3 class="card__title">Gemi</h3>
+              <span class="card__meta">
+                <span class="level level--kolay"><i><b></b></i>Kolay</span>
+                <span class="card__more">Detaylar <svg aria-hidden="true"><use href="#ic-arrow"/></svg></span>
+              </span>
+            </span>
+          </button>
+        </li>
+        <li class="card" data-level="orta" data-reveal style="--d:.32s">
+          <button class="card__btn" type="button" data-product="005" style="--tint:#E6F6EB" aria-haspopup="dialog">
+            <span class="card__media">
+              <span class="card__no">No. 005</span>
+              <svg viewBox="0 0 200 200" role="img" aria-label="Origami zıplayan kurbağa görseli"><use href="#i-kurbaga"/></svg>
+            </span>
+            <span class="card__body">
+              <h3 class="card__title">Zıplayan Kurbağa</h3>
+              <span class="card__meta">
+                <span class="level level--orta"><i><b></b></i>Orta</span>
+                <span class="card__more">Detaylar <svg aria-hidden="true"><use href="#ic-arrow"/></svg></span>
+              </span>
+            </span>
+          </button>
+        </li>
+      </ul>
+      <p class="products__note" data-reveal>Sipariş ve stok bilgisi için <a href="#iletisim">bizimle iletişime geçin</a>.</p>
+    </div>
+  </section>
+
+  <!-- ORIGAMI NEDİR? -->
+  <section class="section about" id="origami-nedir" aria-labelledby="about-title">
+    <div class="container about__grid">
+      <div data-reveal="left">
+        <p class="eyebrow">Kâğıdın sanatı</p>
+        <h2 class="section__title" id="about-title">Origami nedir?</h2>
+        <p class="section__lead">
+          Origami, tek bir kâğıt parçasını kesmeden ve yapıştırmadan, yalnızca katlayarak biçim verme sanatıdır.
+          Düz bir kareden üç boyutlu bir hayvan, çiçek ya da nesne ortaya çıkar.
+        </p>
+        <div class="kanji">
+          <span class="kanji__jp" lang="ja">折り紙</span>
+          <p>Japoncada <b>“ori”</b> katlamak, <b>“kami”</b> kâğıt anlamına gelir. İkisi birleşince <b>origami</b>, yani “kâğıt katlama” olur.</p>
+        </div>
+        <p>
+          Japon kültüründe origami; sabrın, inceliğin ve iyi dileklerin simgesidir. Bugün dünyanın her yerinde okullarda,
+          atölyelerde ve hatta mühendislik ile tasarım çalışmalarında kullanılır.
+        </p>
+      </div>
+
+      <ol class="timeline" data-reveal style="--d:.15s">
+        <li>
+          <span class="era">MS 105 · Çin</span>
+          <h3>Kâğıdın doğuşu</h3>
+          <p>Kâğıt Çin'de geliştirilir; yüzyıllar içinde Kore üzerinden Japonya'ya ulaşır.</p>
+        </li>
+        <li>
+          <span class="era">6.–7. yüzyıl · Japonya</span>
+          <h3>Tapınaklarda ilk katlar</h3>
+          <p>Kâğıt değerli olduğundan katlama önce dini törenlerde ve özel hediyelerde kullanılır.</p>
+        </li>
+        <li>
+          <span class="era">Edo dönemi · 1603–1868</span>
+          <h3>Herkesin sanatı</h3>
+          <p>Kâğıt yaygınlaşır, origami halkın ve çocukların oyununa dönüşür. 1797'de ilk origami kitabı basılır.</p>
+        </li>
+        <li>
+          <span class="era">20. yüzyıl · Dünya</span>
+          <h3>Bin turna ve evrensel dil</h3>
+          <p>Akira Yoshizawa'nın geliştirdiği çizim dili origamiyi dünyaya yayar. Bin turna katlamak, barışın ve umudun simgesi olur.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ÇOCUKLAR İÇİN -->
+  <section class="section kids" id="cocuklar" aria-labelledby="kids-title">
+    <div class="container">
+      <div class="section__head section__head--center" data-reveal>
+        <p class="eyebrow">Gelişime katkı</p>
+        <h2 class="section__title" id="kids-title">Çocuklar için <span class="hl">origami</span></h2>
+        <p class="section__lead">Her kat küçük bir başarı. Origami, ekransız ve keyifli bir etkinlikle çocukların birçok becerisini aynı anda destekler.</p>
+      </div>
+      <ul class="benefits">
+        <li class="benefit benefit--1" data-reveal>
+          <div class="benefit__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0-3.5 10.9V16h7v-2.1A6 6 0 0 0 12 3zM9.5 19h5M10.5 21.5h3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Hayal gücü</h3>
+          <p>Düz bir kâğıdın bir kelebeğe dönüştüğünü görmek, çocukları kendi tasarımlarını hayal etmeye ve yaratmaya teşvik eder.</p>
+        </li>
+        <li class="benefit benefit--2" data-reveal style="--d:.08s">
+          <div class="benefit__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/></svg></div>
+          <h3>Dikkat ve odak</h3>
+          <p>Adımları sırayla takip etmek, yönergeleri dinlemeyi ve tek bir işe odaklanmayı doğal bir şekilde güçlendirir.</p>
+        </li>
+        <li class="benefit benefit--3" data-reveal style="--d:.16s">
+          <div class="benefit__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 13V5.5a1.5 1.5 0 0 1 3 0V11m0-1.5V4a1.5 1.5 0 0 1 3 0v6m0-4.5a1.5 1.5 0 0 1 3 0V12m0-3a1.5 1.5 0 0 1 3 0v5a7 7 0 0 1-7 7h-1a6 6 0 0 1-5-2.7L4.3 15a1.6 1.6 0 0 1 2.6-1.8L8 14.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>El becerisi</h3>
+          <p>Kenarları hizalamak ve katları bastırmak ince motor becerilerini, el–göz koordinasyonunu geliştirir.</p>
+        </li>
+        <li class="benefit benefit--4" data-reveal style="--d:.24s">
+          <div class="benefit__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10M7 21h10M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Sabır</h3>
+          <p>Bir modeli tamamlamak zaman ister. Çocuklar denemeyi, hatadan öğrenmeyi ve sonuca ulaşmanın keyfini deneyimler.</p>
+        </li>
+      </ul>
+      <p class="quote" data-reveal>Bir kâğıdı katlamayı öğrenen çocuk, aslında sabırla bir şey inşa etmeyi öğrenir.</p>
+    </div>
+  </section>
+
+  <!-- AİLECE BİRLİKTE -->
+  <section class="section family" id="ailece" aria-labelledby="family-title">
+    <div class="container family__grid">
+      <div class="family__art" data-reveal="zoom" role="img" aria-label="Masa üzerinde birlikte katlanmış renkli origami figürleri">
+        <svg viewBox="0 0 500 400" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="tbl" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#FFC83D"/><stop offset="1" stop-color="#FF9F3D"/></linearGradient>
+          </defs>
+          <g opacity=".12" stroke="#fff" stroke-width="2"><path d="M0 0L500 400M500 0L0 400M250 0V400M0 200H500"/></g>
+          <path d="M0 290 Q250 250 500 290 V400 H0Z" fill="url(#tbl)"/>
+          <rect x="60" y="250" width="110" height="110" rx="6" fill="#fff" transform="rotate(-12 115 305)"/>
+          <path d="M60 250 L170 360" stroke="#E9E0FD" stroke-width="2" transform="rotate(-12 115 305)"/>
+          <rect x="340" y="262" width="96" height="96" rx="6" fill="#FFE6D4" transform="rotate(10 388 310)"/>
+          <use href="#i-kelebek" x="70" y="80" width="150" height="150"/>
+          <use href="#i-gemi" x="275" y="150" width="170" height="170"/>
+          <use href="#i-gul" x="175" y="40" width="150" height="150"/>
+          <use href="#i-kurbaga" x="170" y="225" width="120" height="120"/>
+        </svg>
+        <div class="family__tag"><span aria-hidden="true">👨‍👩‍👧</span>Birlikte katla, birlikte gülümse</div>
+      </div>
+      <div data-reveal style="--d:.1s">
+        <p class="eyebrow">Kaliteli zaman</p>
+        <h2 class="section__title" id="family-title">Ailece <span class="hl">birlikte</span></h2>
+        <p class="section__lead">
+          Telefonlar bir kenara, kâğıtlar masaya! Origami, ebeveynlerle çocukların yan yana oturup aynı hedefe
+          birlikte ulaştığı, sohbetin ve kahkahanın eksik olmadığı bir etkinliktir.
+        </p>
+        <ul class="tips">
+          <li><div><b>Haftada bir “katlama saati” belirleyin</b><span>Küçük bir rutin, çocuklar için sabırsızlıkla beklenen bir aile buluşmasına dönüşür.</span></div></li>
+          <li><div><b>Rehberi çocuğunuz okusun</b><span>Siz kâğıdı tutun, o yönergeleri anlatsın. Roller değişince özgüven büyür.</span></div></li>
+          <li><div><b>Eserlerinizi sergileyin</b><span>Katladığınız figürlerle bir köşe ya da hikâye kurun; her model yeni bir anı olur.</span></div></li>
+        </ul>
+        <a class="btn" href="#urunler">Birlikte başlayın <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- İLETİŞİM -->
+  <section class="section contact" id="iletisim" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="section__head section__head--center" data-reveal>
+        <p class="eyebrow">Bize ulaşın</p>
+        <h2 class="section__title" id="contact-title">İletişim</h2>
+        <p class="section__lead">Sipariş, okul ve atölye iş birlikleri ya da sorularınız için bize yazın.</p>
+      </div>
+      <div class="contact__grid">
+        <div class="insta" data-reveal>
+          <svg class="insta__logo" aria-hidden="true"><use href="#ic-insta"/></svg>
+          <h3>Instagram'da bizi takip edin</h3>
+          <p>Yeni modeller, katlama ipuçları ve atölye duyuruları ilk olarak Instagram hesabımızda.</p>
+          <p class="insta__handle">@origamiatolyesitr</p>
+          <a class="btn btn--yellow" href="https://www.instagram.com/origamiatolyesitr/" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#ic-insta"/></svg>Instagram'a git
+          </a>
+        </div>
+
+        <form class="form" id="contactForm" novalidate data-reveal style="--d:.1s">
+          <h3>Mesaj gönderin</h3>
+          <p>Formu doldurduğunuzda e-posta uygulamanız mesajınız hazır şekilde açılır.</p>
+          <div class="form__row">
+            <div class="field">
+              <label for="f-name">Adınız</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name">
+              <span class="field__error" id="e-name" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="f-email">E-posta adresiniz</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="e-email">
+              <span class="field__error" id="e-email" aria-live="polite"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-subject">Konu</label>
+            <input id="f-subject" name="subject" type="text" placeholder="Örn. 003 – Saplı Gül hakkında">
+          </div>
+          <div class="field">
+            <label for="f-msg">Mesajınız</label>
+            <textarea id="f-msg" name="message" required aria-describedby="e-msg"></textarea>
+            <span class="field__error" id="e-msg" aria-live="polite"></span>
+          </div>
+          <button class="btn" type="submit">Gönder <svg aria-hidden="true"><use href="#ic-arrow"/></svg></button>
+          <p class="form__status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a class="logo" href="#anasayfa" aria-label="Origami Atölyesi – Başa dön">
+        <svg viewBox="0 0 1020 630" aria-hidden="true"><use href="#logo-mark"/></svg>
+        <span>Origami Atölyesi<small>Hayal et, katla, oluştur!</small></span>
+      </a>
+      <nav class="footer__nav" aria-label="Alt menü">
+        <a href="#urunler">Ürünlerimiz</a>
+        <a href="#origami-nedir">Origami nedir?</a>
+        <a href="#cocuklar">Çocuklar için</a>
+        <a href="#ailece">Ailece birlikte</a>
+        <a href="#iletisim">İletişim</a>
+        <a href="https://www.instagram.com/origamiatolyesitr/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <p style="margin:0">© <span id="year">2026</span> Origami Atölyesi. Tüm hakları saklıdır.</p>
+      <button class="link-btn" type="button" id="replayIntro">Açılış animasyonunu tekrar izle</button>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Sayfanın başına dön"><svg aria-hidden="true"><use href="#ic-up"/></svg></button>
+
+<!-- ÜRÜN DETAYI -->
+<dialog class="modal" id="productModal" aria-labelledby="modalTitle">
+  <button class="modal__close" type="button" data-close aria-label="Kapat"><svg aria-hidden="true"><use href="#ic-close"/></svg></button>
+  <div class="modal__inner">
+    <div class="modal__media" id="modalMedia">
+      <svg viewBox="0 0 200 200" role="img" id="modalImg" aria-label=""><use id="modalUse" href="#i-kelebek"/></svg>
+    </div>
+    <div class="modal__body">
+      <p class="modal__no" id="modalNo">No. 001</p>
+      <h2 class="modal__title" id="modalTitle">Kelebek</h2>
+      <span class="level" id="modalLevel"><i><b></b></i><span></span></span>
+      <p class="modal__desc" id="modalDesc" style="margin-top:16px"></p>
+      <div class="specs">
+        <div class="spec"><b id="modalAge"></b><span>Önerilen yaş</span></div>
+        <div class="spec"><b id="modalTime"></b><span>Tahmini süre</span></div>
+        <div class="spec"><b id="modalSteps"></b><span>Katlama adımı</span></div>
+      </div>
+      <ul class="includes" id="modalIncludes"></ul>
+      <div class="modal__actions">
+        <a class="btn btn--yellow" id="modalCta" href="https://www.instagram.com/origamiatolyesitr/" target="_blank" rel="noopener noreferrer">
+          <svg aria-hidden="true"><use href="#ic-insta"/></svg>Bilgi al
+        </a>
+        <div class="modal__nav">
+          <button class="icon-btn" type="button" id="modalPrev" aria-label="Önceki ürün"><svg aria-hidden="true"><use href="#ic-arrow-left"/></svg></button>
+          <button class="icon-btn" type="button" id="modalNext" aria-label="Sonraki ürün"><svg aria-hidden="true"><use href="#ic-arrow"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  'use strict';
+
+  /* =========================================================
+     AYARLAR
+     ========================================================= */
+  var CONFIG = {
+    instagram: 'https://www.instagram.com/origamiatolyesitr/',
+    email: 'merhaba@origamiatolyesi.com',
+    introKey: 'oa:intro-seen'
+  };
+
+  var root = document.documentElement;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+
+  /* =========================================================
+     ÜRÜN VERİLERİ
+     ========================================================= */
+  var PRODUCTS = [
+    { id: '001', name: 'Kelebek', level: 'Kolay', icon: 'i-kelebek', tint: '#EFE8FF', age: '5+', time: '10 dk', steps: '8',
+      desc: 'Rengârenk kanatlarıyla origamiye ilk adım için ideal bir model. Birkaç temel katla kanatlarını açan bir kelebek ortaya çıkar.',
+      includes: ['Çift taraflı renkli origami kâğıtları', 'Resimli, adım adım katlama rehberi', 'Kanatları süslemek için fikir kartı'] },
+    { id: '002', name: 'Tilki', level: 'Kolay', icon: 'i-tilki', tint: '#FFEADB', age: '5+', time: '10 dk', steps: '7',
+      desc: 'Sivri kulakları ve sevimli yüzüyle küçük ellerin kısa sürede tamamlayabileceği bir orman dostu. Göz ve burun çizerek karakter kazandırabilirsiniz.',
+      includes: ['Turuncu–beyaz origami kâğıtları', 'Resimli, adım adım katlama rehberi', 'Hikâye kurmak için orman sahnesi önerisi'] },
+    { id: '003', name: 'Saplı Gül', level: 'Orta', icon: 'i-gul', tint: '#F3EAFF', age: '8+', time: '25 dk', steps: '16',
+      desc: 'Katmanlı yaprakları ve ayrı katlanan sapıyla daha fazla dikkat isteyen zarif bir çiçek. Sevdiklerinize hediye etmek için harika.',
+      includes: ['Çiçek ve yaprak için renkli kâğıtlar', 'Detaylı, aşamalı katlama rehberi', 'Sap ve yaprak birleştirme ipuçları'] },
+    { id: '004', name: 'Gemi', level: 'Kolay', icon: 'i-gemi', tint: '#FFF4D6', age: '5+', time: '8 dk', steps: '9',
+      desc: 'Klasik kâğıt gemi! Birkaç dakikada katlanır, küçük maceralara yelken açar. Origamiyle tanışan çocuklar için mükemmel bir başlangıç.',
+      includes: ['Dayanıklı renkli origami kâğıtları', 'Resimli, adım adım katlama rehberi', 'Gemiye isim vermek için bayrak etiketi'] },
+    { id: '005', name: 'Zıplayan Kurbağa', level: 'Orta', icon: 'i-kurbaga', tint: '#E6F6EB', age: '7+', time: '15 dk', steps: '13',
+      desc: 'Arkasına hafifçe bastırınca gerçekten zıplıyor! Katladıktan sonra en uzağa kimin kurbağasının zıplayacağını görmek için aile yarışması düzenleyin.',
+      includes: ['Yeşil tonlarda origami kâğıtları', 'Aşamalı katlama rehberi', 'Zıplama yarışı için ölçü şeridi'] }
+  ];
+
+  /* =========================================================
+     1. AÇILIŞ ANİMASYONU
+     Kâğıt dört çeyrekten oluşur. Önce üst yarı aşağı, sonra sağ
+     yarı sola katlanır; marka yüzü görünür. Ardından kâğıt aynı
+     sırayla açılır ve çeyrekler dışarı açılarak siteyi ortaya çıkarır.
+     ========================================================= */
+  var intro = $('#intro');
+  var introAnims = [];
+  var introDone = !root.classList.contains('intro-on');
+
+  function markIntroSeen() { try { localStorage.setItem(CONFIG.introKey, '1'); } catch (e) {} }
+
+  function finishIntro() {
+    if (introDone) return;
+    introDone = true;
+    introAnims.forEach(function (a) { try { a.cancel(); } catch (e) {} });
+    introAnims = [];
+    root.classList.remove('intro-on', 'intro-reduced');
+    root.classList.add('intro-off');
+    markIntroSeen();
+    startReveals();
+    openFromHash();
+  }
+
+  function playIntro() {
+    var D = 2750;                                   // toplam süre (ms)
+    var IN = 'cubic-bezier(.65,0,.35,1)';           // katlanma eğrisi
+    var OUT = 'cubic-bezier(.7,0,.25,1)';           // açılış eğrisi
+    // Zaman çizelgesi (ms)
+    var T = { f1a: 180, f1b: 700, f2b: 1230, hold: 1430, u2b: 1780, u1b: 2130, end: D };
+
+    // [zaman, stil, eğri] listesini Web Animations keyframe dizisine çevirir
+    function kf(list) {
+      return list.map(function (k) {
+        var o = Object.assign({ offset: k[0] / D }, k[1]);
+        o.easing = k[2] || IN;
+        return o;
+      });
+    }
+    function run(el, frames) {
+      if (!el) return;
+      var a = el.animate(kf(frames), { duration: D, fill: 'both' });
+      introAnims.push(a);
+      return a;
+    }
+
+    var flat = 'rotateX(0deg) translateZ(0px)';
+    var down = 'rotateX(-180deg) translateZ(-1px)';
+    var colFlat = 'rotateY(0deg) translateZ(0px)';
+    var colFold = 'rotateY(-180deg) translateZ(-3px)';
+
+    // Üst yarı (TL + TR) aşağı katlanır
+    [$('#qTL'), $('#qTR')].forEach(function (el) {
+      run(el, [[0, { transform: flat }], [T.f1a, { transform: flat }], [T.f1b, { transform: down }],
+               [T.u2b, { transform: down }], [T.u1b, { transform: flat }], [D, { transform: flat }]]);
+    });
+
+    // Sağ sütun sola katlanır
+    run($('#paperCol'), [[0, { transform: colFlat }], [T.f1b, { transform: colFlat }], [T.f2b, { transform: colFold }],
+                         [T.hold, { transform: colFold }], [T.u2b, { transform: colFlat }], [D, { transform: colFlat }]]);
+
+    // Katlanan parça ekranın ortasında kalsın diye kâğıt kaydırılır ve hafifçe kaldırılır
+    var p0 = 'translate(0%, 0%) scale(1)';
+    var p1 = 'translate(0%, -22.5%) scale(.9)';
+    var p2 = 'translate(20.5%, -20.5%) scale(.82)';
+    run($('#paper'), [[0, { transform: p0 }], [T.f1a, { transform: p0 }], [T.f1b, { transform: p1 }], [T.f2b, { transform: p2 }],
+                      [T.hold, { transform: p2, easing: 'cubic-bezier(.4,0,.2,1)' }], [T.u2b, { transform: p1 }], [T.u1b, { transform: p0 }], [D, { transform: p0 }]]);
+
+    // Katlanırken ışık değişimi (gölge)
+    $$('#qTL .shade, #qTR .shade').forEach(function (el) {
+      run(el, [[0, { opacity: 0 }], [T.f1a, { opacity: 0 }], [(T.f1a + T.f1b) / 2, { opacity: .32 }], [T.f1b, { opacity: .06 }],
+               [T.u2b, { opacity: .06 }], [(T.u2b + T.u1b) / 2, { opacity: .32 }], [T.u1b, { opacity: 0 }], [D, { opacity: 0 }]]);
+    });
+    $$('#qBR .shade').forEach(function (el) {
+      run(el, [[0, { opacity: 0 }], [T.f1b, { opacity: 0 }], [(T.f1b + T.f2b) / 2, { opacity: .3 }], [T.f2b, { opacity: 0 }],
+               [T.hold, { opacity: 0 }], [(T.hold + T.u2b) / 2, { opacity: .3 }], [T.u2b, { opacity: 0 }], [D, { opacity: 0 }]]);
+    });
+    // Alt sabit yüzeylere düşen gölge
+    $$('#qBL .face--front .shade').forEach(function (el) {
+      run(el, [[0, { opacity: 0 }], [T.f1a, { opacity: 0 }], [T.f1b, { opacity: .12 }], [T.u2b, { opacity: .12 }], [T.u1b, { opacity: 0 }], [D, { opacity: 0 }]]);
+    });
+
+    // Açıldıktan sonra kâğıtta kat izleri belirir
+    $$('#paper .crease').forEach(function (el) {
+      run(el, [[0, { opacity: 0 }], [T.f1b, { opacity: 0 }], [T.f2b, { opacity: 1 }], [D, { opacity: 1 }]]);
+    });
+
+    // Final: dört çeyrek dışarı doğru açılır, site ortaya çıkar
+    var open = {
+      qTL: 'translate3d(-18%, -18%, 0) rotate3d(1, -1, 0, -72deg) scale(1.04)',
+      qTR: 'translate3d(18%, -18%, 0) rotate3d(1, 1, 0, -72deg) scale(1.04)',
+      qBL: 'translate3d(-18%, 18%, 0) rotate3d(1, 1, 0, 72deg) scale(1.04)',
+      qBR: 'translate3d(18%, 18%, 0) rotate3d(1, -1, 0, 72deg) scale(1.04)'
+    };
+    var still = 'translate3d(0%, 0%, 0) rotate3d(1, 1, 0, 0deg) scale(1)';
+    Object.keys(open).forEach(function (id) {
+      // Dönüş .qi üzerinde, solma ise yüzeylerde: opaklık 3B katmanı düzleştirmesin
+      run($('#' + id + ' > .qi'), [[0, { transform: still }], [T.u1b, { transform: still }, OUT], [D, { transform: open[id] }]]);
+      $$('#' + id + ' > .qi > .face').forEach(function (face) {
+        run(face, [[0, { opacity: 1 }], [T.u1b + 300, { opacity: 1 }, 'ease-in'], [D, { opacity: 0 }]]);
+      });
+    });
+    run($('#introBackdrop'), [[0, { opacity: 1 }], [T.u1b, { opacity: 1 }, 'ease-out'], [T.u1b + 420, { opacity: 0 }], [D, { opacity: 0 }]]);
+
+    // Site, kâğıt açılmaya başladığında belirmeye başlar
+    var revealTimer = setTimeout(startReveals, T.u1b + 80);
+    var last = introAnims[0];
+    if (last && last.finished) {
+      last.finished.then(finishIntro).catch(function () { clearTimeout(revealTimer); });
+    } else {
+      setTimeout(finishIntro, D + 50);
+    }
+  }
+
+  function playReducedIntro() {
+    // Hareket azaltma tercihi: katlanma yok, yalnızca kısa ve yumuşak bir solma
+    var a = intro.animate([{ opacity: 1 }, { opacity: 1, offset: .5 }, { opacity: 0 }], { duration: 900, easing: 'ease', fill: 'both' });
+    introAnims.push(a);
+    a.finished.then(finishIntro).catch(function () {});
+  }
+
+  function startIntro() {
+    if (!root.classList.contains('intro-on')) return;
+    introDone = false;
+    if (reduceMotion.matches || root.classList.contains('intro-reduced')) playReducedIntro();
+    else playIntro();
+  }
+
+  $('#introSkip').addEventListener('click', finishIntro);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !introDone) finishIntro(); });
+
+  $('#replayIntro').addEventListener('click', function () {
+    window.scrollTo(0, 0);
+    root.classList.remove('intro-off');
+    root.classList.add('intro-on');
+    if (reduceMotion.matches) root.classList.add('intro-reduced');
+    $('#introSkip').focus({ preventScroll: true });
+    startIntro();
+  });
+
+  /* =========================================================
+     2. KAYDIRMA İLE BELİRME
+     ========================================================= */
+  var revealsStarted = false;
+  var io = null;
+  function startReveals() {
+    if (revealsStarted) return;
+    revealsStarted = true;
+    var items = $$('[data-reveal]');
+    if (!('IntersectionObserver' in window)) { items.forEach(function (el) { el.classList.add('is-in'); }); return; }
+    io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: .12 });
+    items.forEach(function (el) { io.observe(el); });
+  }
+
+  /* =========================================================
+     3. ÜST MENÜ, MOBİL MENÜ, AKTİF BAĞLANTI
+     ========================================================= */
+  var header = $('#header');
+  var toTop = $('#toTop');
+  var nav = $('#nav');
+  var toggle = $('#menuToggle');
+
+  function onScroll() {
+    var y = window.scrollY || window.pageYOffset;
+    header.classList.toggle('is-scrolled', y > 10);
+    toTop.classList.toggle('is-visible', y > 700);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  function setMenu(open) {
+    nav.classList.toggle('is-open', open);
+    document.body.classList.toggle('nav-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
+    if (open) { var first = $('a', nav); if (first) first.focus({ preventScroll: true }); }
+  }
+  toggle.addEventListener('click', function () { setMenu(toggle.getAttribute('aria-expanded') !== 'true'); });
+  $$('a', nav).forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav.classList.contains('is-open')) { setMenu(false); toggle.focus(); }
+  });
+  window.matchMedia('(min-width: 901px)').addEventListener('change', function (e) { if (e.matches) setMenu(false); });
+
+  toTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+    $('.logo').focus({ preventScroll: true });
+  });
+
+  if ('IntersectionObserver' in window) {
+    var links = $$('a[href^="#"]', nav);
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        links.forEach(function (l) {
+          var on = l.getAttribute('href') === '#' + en.target.id;
+          l.classList.toggle('is-active', on);
+          if (on) l.setAttribute('aria-current', 'true'); else l.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    $$('main section[id]').forEach(function (s) { spy.observe(s); });
+  }
+
+  /* =========================================================
+     4. ÜRÜN FİLTRESİ
+     ========================================================= */
+  var filters = $$('.filter');
+  filters.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = btn.getAttribute('data-filter');
+      filters.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+      $$('#productGrid .card').forEach(function (card) {
+        var show = f === 'all' || card.getAttribute('data-level') === f;
+        card.hidden = !show;
+        if (show) card.classList.add('is-in');
+      });
+    });
+  });
+
+  /* =========================================================
+     5. ÜRÜN KARTI EĞİM EFEKTİ (yalnızca fare + hareket serbest)
+     ========================================================= */
+  var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  $$('.card__btn').forEach(function (card) {
+    card.addEventListener('pointermove', function (e) {
+      if (!finePointer.matches || reduceMotion.matches) return;
+      var r = card.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - .5;
+      var y = (e.clientY - r.top) / r.height - .5;
+      card.style.transform = 'translateY(-8px) rotateX(' + (-y * 8).toFixed(2) + 'deg) rotateY(' + (x * 10).toFixed(2) + 'deg)';
+    });
+    card.addEventListener('pointerleave', function () { card.style.transform = ''; });
+  });
+
+  /* =========================================================
+     6. ÜRÜN DETAYI (DIALOG)
+     ========================================================= */
+  var modal = $('#productModal');
+  var current = 0;
+  var lastFocus = null;
+  var supportsDialog = typeof modal.showModal === 'function';
+
+  function renderProduct(i) {
+    var p = PRODUCTS[i];
+    current = i;
+    $('#modalUse').setAttribute('href', '#' + p.icon);
+    $('#modalImg').setAttribute('aria-label', 'Origami ' + p.name.toLocaleLowerCase('tr') + ' görseli');
+    $('#modalMedia').style.setProperty('--tint', p.tint);
+    $('#modalNo').textContent = 'No. ' + p.id;
+    $('#modalTitle').textContent = p.name;
+    var lv = $('#modalLevel');
+    lv.className = 'level level--' + (p.level === 'Kolay' ? 'kolay' : 'orta');
+    $('span', lv).textContent = p.level;
+    $('#modalDesc').textContent = p.desc;
+    $('#modalAge').textContent = p.age;
+    $('#modalTime').textContent = p.time;
+    $('#modalSteps').textContent = p.steps;
+    var ul = $('#modalIncludes');
+    ul.innerHTML = '';
+    p.includes.forEach(function (t) { var li = document.createElement('li'); li.textContent = t; ul.appendChild(li); });
+    $('#modalCta').setAttribute('href', CONFIG.instagram);
+    $('#modalCta').lastChild.textContent = p.id + ' – ' + p.name + ' için bilgi al';
+    if (history.replaceState) history.replaceState(null, '', '#urun-' + p.id);
+  }
+
+  function openProduct(i) {
+    lastFocus = document.activeElement;
+    renderProduct(i);
+    if (supportsDialog) { if (!modal.open) modal.showModal(); }
+    else { modal.setAttribute('open', ''); }
+    $('.modal__close', modal).focus();
+  }
+
+  function closeProduct() {
+    if (!modal.open) return;
+    var done = function () {
+      modal.classList.remove('is-closing');
+      if (supportsDialog) modal.close(); else modal.removeAttribute('open');
+    };
+    if (reduceMotion.matches) done();
+    else { modal.classList.add('is-closing'); setTimeout(done, 230); }
+  }
+
+  modal.addEventListener('close', function () {
+    if (history.replaceState) history.replaceState(null, '', location.pathname + location.search + '#urunler');
+    if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+  });
+  modal.addEventListener('cancel', function (e) { e.preventDefault(); closeProduct(); });
+  modal.addEventListener('click', function (e) { if (e.target === modal) closeProduct(); });
+  $('[data-close]', modal).addEventListener('click', closeProduct);
+
+  function step(dir) { renderProduct((current + dir + PRODUCTS.length) % PRODUCTS.length); }
+  $('#modalPrev').addEventListener('click', function () { step(-1); });
+  $('#modalNext').addEventListener('click', function () { step(1); });
+  modal.addEventListener('keydown', function (e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'ArrowRight') step(1);
+    if (e.key === 'ArrowLeft') step(-1);
+  });
+
+  $$('[data-product]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id = btn.getAttribute('data-product');
+      var idx = PRODUCTS.findIndex(function (p) { return p.id === id; });
+      if (idx > -1) openProduct(idx);
+    });
+  });
+
+  function openFromHash() {
+    var m = /^#urun-(\d{3})$/.exec(location.hash);
+    if (!m) return;
+    var idx = PRODUCTS.findIndex(function (p) { return p.id === m[1]; });
+    if (idx > -1) openProduct(idx);
+  }
+
+  /* =========================================================
+     7. İLETİŞİM FORMU (e-posta uygulamasında açılır)
+     ========================================================= */
+  var form = $('#contactForm');
+  function setError(input, msg) {
+    var err = $('#' + input.getAttribute('aria-describedby'));
+    input.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    if (err) err.textContent = msg || '';
+    return !msg;
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = form.elements.name, email = form.elements.email, msg = form.elements.message;
+    var ok = true;
+    ok = setError(name, name.value.trim() ? '' : 'Lütfen adınızı yazın.') && ok;
+    ok = setError(email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()) ? '' : 'Lütfen geçerli bir e-posta adresi yazın.') && ok;
+    ok = setError(msg, msg.value.trim().length >= 5 ? '' : 'Lütfen mesajınızı yazın.') && ok;
+    if (!ok) { var bad = $('[aria-invalid="true"]', form); if (bad) bad.focus(); return; }
+    var subject = form.elements.subject.value.trim() || 'Origami Atölyesi – Web sitesi mesajı';
+    var body = msg.value.trim() + '\n\n— ' + name.value.trim() + ' (' + email.value.trim() + ')';
+    window.location.href = 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    $('#formStatus').textContent = 'Teşekkürler! E-posta uygulamanız açılıyor. Açılmazsa bize ' + CONFIG.email + ' adresinden ya da Instagram üzerinden ulaşabilirsiniz.';
+  });
+  $$('input, textarea', form).forEach(function (el) {
+    el.addEventListener('input', function () { if (el.getAttribute('aria-invalid') === 'true') setError(el, ''); });
+  });
+
+  /* =========================================================
+     8. BAŞLAT
+     ========================================================= */
+  $('#year').textContent = new Date().getFullYear();
+  if (introDone) { startReveals(); openFromHash(); }
+  else startIntro();
+})();
+</script>
+</body>
+</html>
